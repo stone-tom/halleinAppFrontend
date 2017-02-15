@@ -1,0 +1,63 @@
+.establishmentWrapper{
+  padding: 15px;
+  font-family:"Gotham Book";
+  h1{
+    text-transform: uppercase;
+    margin-left: 20px;
+  }
+  p{
+    margin-left: 20px;
+
+  }
+
+  h3{
+    font-family: "Gotham Medium";
+    margin-left: 20px;
+
+  }
+  .doneicon{
+    position: fixed;
+    bottom: 35px;
+    right: 35px;
+    font-size: 30px;
+    border: solid 1px #27ae60;
+    border-radius: 100px;
+    padding: 5px;
+    color: #fff;
+    background-color: #27ae60;
+  }
+  .establishments{
+    margin-left: 20px;
+
+    .establishments{
+      span{
+        display: inline-block;
+        font-size: 13px;
+        color: #fff;
+        text-align:center;
+        margin:1px;
+        padding:5px 0px;
+        vertical-align: middle;
+      }
+      i{
+        font-size: 13px;
+        color: #fff;
+        vertical-align: middle;
+
+      }
+      display: inline-block;
+      padding:0px 20px;
+      height: auto;
+      background-color: #34495e ;
+      border-radius: 50px;
+      margin: 0;
+      margin-left: 3px;
+      &.blue{
+        background-color: #34495e;
+      }
+      &.orange{
+        background-color:orangered;
+      }
+
+    }
+  }}
