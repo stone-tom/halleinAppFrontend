@@ -6,13 +6,17 @@ myApp.config(function ($routeProvider) {
             templateUrl: 'content/home.html',
             controller: 'homeController',
         })
-        .when('/food', {
-            templateUrl: 'content/food.html',
-            controller: 'foodController',
-        })
         .when('/interests', {
             templateUrl: 'content/interests.html',
             controller: 'interestsController',
+        })
+        .when('/newsletter', {
+            templateUrl: 'content/newsletter.html',
+            controller: 'newsletterController',
+        })
+        .when('/food', {
+            templateUrl: 'content/food.html',
+            controller: 'foodController',
         })
         .otherwise({
             redirectTo: "/"
