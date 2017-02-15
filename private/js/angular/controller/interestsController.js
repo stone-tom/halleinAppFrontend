@@ -1,10 +1,15 @@
 myApp.controller('interestsController', function ($scope) {
 
-    $scope.intrerests = [
-        {interest: 'News'},
-        {interest: 'News'},
-        {interest: 'News'},
-        {interest: 'News'},
+    $scope.interests = [
+        {name: 'News'},
+        {name: 'Essen'},
+        {name: 'Test'},
+        {name: 'Testöö'}
 
-    ]
+]
 });
+
+
+
+
+
