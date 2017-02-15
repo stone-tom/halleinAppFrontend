@@ -1,18 +1,18 @@
 .interestsWrapper{
-  padding: 15px;
+  padding: 20px;
   font-family:"Gotham Book";
   h1{
     text-transform: uppercase;
-    margin-left: 20px;
+
   }
   p{
-    margin-left: 20px;
+
 
   }
 
   h3{
     font-family: "Gotham Medium";
-    margin-left: 20px;
+
 
   }
   .doneicon{
@@ -27,7 +27,7 @@
     background-color: #27ae60;
   }
   .interests{
-    margin-left: 20px;
+
 
     .interest{
     span{
@@ -52,6 +52,7 @@
     border-radius: 50px;
     margin:0;
     margin-left: 3px;
+      margin-top: 3px;
       &.blue{
         background-color: #34495e;
       }
