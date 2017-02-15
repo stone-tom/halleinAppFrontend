@@ -18,6 +18,10 @@ myApp.config(function ($routeProvider) {
             templateUrl: 'content/food.html',
             controller: 'foodController',
         })
+        .when('/establishment', {
+            templateUrl: 'content/establishment.html',
+            controller: 'establishmentController',
+        })
         .otherwise({
             redirectTo: "/"
         });
