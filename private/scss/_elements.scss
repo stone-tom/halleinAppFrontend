@@ -27,7 +27,7 @@ h2 {
   }
   span {
     padding-left: 30px;
-    margin-left: 50px;
+
   }
   div:before {
     visibility: visible;
@@ -35,7 +35,7 @@ h2 {
     position: absolute;
     width: 16px;
     height: 16px;
-    background-color: #f2f2f2;
+    background-color: rgba(128, 128, 128, 0.3);
   }
   input:checked + div:before {
     background-image: url('../../assets/icons/done.png');
