@@ -3,9 +3,17 @@
     <p>Wir benötigen einige Daten um die App für Sie persönlich einzigartig zu gestalten. Die Daten werden jedoch nur auf Ihrem Gerät gespeichert und nicht weitergegeben</p>
 
     <h3>Geschlecht:</h3>
-    <div class="establishments">
-        <div class="establishment" ng-class="{establishment.color}" ng-repeat="establishment in establishments" ng-click="establishment.active = !establishment.active"><span>{{establishment.name}}</span> <i class="material-icons " ng-show="establishment.active">done</i></div></div>
+    <div class="sexes">
+        <div class="sex" ng-class="{'active': $index==sexes.active}" ng-repeat="sex in sexes.options" ng-click="sexes.active = $index"><span>{{sex.name}}</span> <i class="material-icons " ng-show="establishment.active">done</i></div></div>
     <br>
     <i class="material-icons doneicon">done</i>
+    <h3>Geburtsjahr:</h3>
+
+
+    <input type="text">
+    <br>
+    <label>
+        <input type="checkbox">
+        Anbieter von Schülermahlzeit
+    </label>
 </div>
-<h3>Geburtsjahr:</h3>

@@ -26,18 +26,19 @@
     color: #fff;
     background-color: #27ae60;
   }
-  .establishments{
+  .sexes{
     margin-left: 20px;
 
-    .establishments{
+    .sex{
       span{
         display: inline-block;
         font-size: 13px;
-        color: #fff;
+        color: black;
         text-align:center;
         margin:1px;
         padding:5px 0px;
         vertical-align: middle;
+        font-family: "Gotham Book";
       }
       i{
         font-size: 13px;
@@ -46,18 +47,36 @@
 
       }
       display: inline-block;
+      margin-right: 10px;
       padding:0px 20px;
       height: auto;
-      background-color: #34495e ;
-      border-radius: 50px;
-      margin: 0;
-      margin-left: 3px;
-      &.blue{
-        background-color: #34495e;
-      }
-      &.orange{
-        background-color:orangered;
-      }
+      background-color: rgba(128, 128, 128, 0.3);
+&.active{
+  background-color: #27ae60;
+}
+
 
     }
-  }}
+
+
+  }
+  input{
+
+    background-color: rgba(128, 128, 128, 0.3);
+    border: none;
+    margin-left: 18px;
+    height: 20px;
+
+
+  }
+label{
+input {
+
+  margin-top: 20px;
+  background-color: rgba(128, 128, 128, 0.3);
+  border: none;
+  height: 50px;
+}
+  }
+}
+
