@@ -26,6 +26,10 @@ myApp.config(function ($routeProvider) {
             templateUrl: 'content/establishment.html',
             controller: 'establishmentController',
         })
+        .when('/settings', {
+            templateUrl: 'content/settings.html',
+            controller: 'settingsController',
+        })
         .otherwise({
             redirectTo: "/"
         });
