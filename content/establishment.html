@@ -6,14 +6,15 @@
     <div class="sexes">
         <div class="sex" ng-class="{'active': $index==sexes.active}" ng-repeat="sex in sexes.options" ng-click="sexes.active = $index"><span>{{sex.name}}</span> <i class="material-icons " ng-show="establishment.active">done</i></div></div>
     <br>
-    <i class="material-icons doneicon">done</i>
     <h3>Geburtsjahr:</h3>
 
 
     <input type="text">
     <br>
-    <label>
+    <label class="checkbox">
         <input type="checkbox">
-        Anbieter von Schülermahlzeit
+        <div></div>
+        <span>Ich bin Schüler</span>
     </label>
+    <a href="#newsletter"><i class="material-icons doneicon">done</i></a>
 </div>
