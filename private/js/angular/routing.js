@@ -18,6 +18,10 @@ myApp.config(function ($routeProvider) {
             templateUrl: 'content/food.html',
             controller: 'foodController',
         })
+        .when('/start', {
+            templateUrl: 'content/start.html',
+            controller: 'startController',
+        })
         .when('/establishment', {
             templateUrl: 'content/establishment.html',
             controller: 'establishmentController',
