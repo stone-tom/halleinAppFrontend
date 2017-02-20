@@ -26,8 +26,30 @@
     }
     .view{
       padding: 20px;
-      .general{
+      .general {
+      }
+.location{
+  .Adresse h1{
+    font-family: "gotham Medium";
+    text-align: center;
 
+    margin: 0;
+    padding: 0;
+    margin-top: 80px;
+}
+  .Straße h1{
+    font-family: "Gotham Book";
+    text-align: center;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+  }
+   .maps button{
+     margin-top: 150px;
+     width: 100%;
+     height:40px;
+   }
       }
     }
   }
