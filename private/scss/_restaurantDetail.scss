@@ -85,5 +85,40 @@
         }
       }
     }
+
+    .menus{
+
+
+
+      .meals{
+         text-align: center;
+        h1{
+          text-transform:uppercase;
+          color: #000;
+          font-family: "Gotham Medium";
+          font-size:20px;
+          margin: 0;
+
+        }
+        p{
+          font-family:"Gotham Book";
+          color: #000;
+          font-size:18px;
+        }
+      }
+    .notification{
+      margin-top: 50px;
+      text-align: center;
+      span{
+        font-family: "Gotham Book";
+        font-size: 18px;
+      }
+      label{
+        vertical-align: middle;
+      }
+    }
+
+    }
   }
-}
+
+  }
