@@ -20,7 +20,7 @@ myApp.controller('restaurantDetailController', function ($scope, $timeout) {
     $timeout(countUp, 5000);
 
     $scope.tabswitcher = {
-        active: 0,
+        active: 1,
     tabs: [
         {icon: 'arrow_back', link: 'food'},
         {icon: 'info_outline', template: 'restaurantDetail/general.html'},
@@ -28,4 +28,15 @@ myApp.controller('restaurantDetailController', function ($scope, $timeout) {
         {icon: 'map', template: 'restaurantDetail/location.html'},
         {icon: 'star_border', template: 'restaurantDetail/feedback.html'},
     ]};
+
+    $scope.options = [
+        {icon: 'local_parking'},
+        {icon: 'pets'},
+        {icon: 'credit_card'}
+    ]
+
+    $scope.data = {
+        phone: '06245 212',
+        website: 'cleitzlers.com'
+    }
 });
