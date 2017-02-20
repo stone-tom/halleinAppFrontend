@@ -59,14 +59,17 @@ font-size: 20px;
           padding: 0;
           margin-top: 15px;
         }
-        .maps button {
+        .maps .button {
           position: absolute;
           bottom: 0;
           width: 100%;
           left: 0;
-          height: 50px;
           border: none;
           background-image: url('../../assets/imgs/maps.PNG');
+          text-align: center;
+          padding: 20px 0px;
+          text-decoration: none;
+          color: black;
         }
 
         .left, .right {
