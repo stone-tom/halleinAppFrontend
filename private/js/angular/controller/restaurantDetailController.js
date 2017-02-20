@@ -20,11 +20,7 @@ myApp.controller('restaurantDetailController', function ($scope, $timeout) {
     $timeout(countUp, 5000);
 
     $scope.tabswitcher = {
-<<<<<<< HEAD
-        active: 2,
-=======
         active: 1,
->>>>>>> 6c1c9efbe5f3813881771027b99ec82b89dbba8a
     tabs: [
         {icon: 'arrow_back', link: 'food'},
         {icon: 'info_outline', template: 'restaurantDetail/general.html'},
