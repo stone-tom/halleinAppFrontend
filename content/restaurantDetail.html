@@ -4,6 +4,7 @@
     </div>
     <div class="content">
         <div class="tabs">
+            <a href="#/start"><i class="material-icons">arrow_back</i></a>
             <div class="tab" ng-repeat="tab in tabswitcher.tabs" ng-class="{'active': $index==tabswitcher.active}" ng-click="tabswitcher.active = $index">
                 <i class="material-icons">{{tab.icon}}</i>
             </div>

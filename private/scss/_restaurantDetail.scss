@@ -22,8 +22,10 @@
       }
     }
     .tabs {
-      .tab {
+      font-size: 0;
+      .tab, a {
         display: inline-block;
+        color: #000;
         width: 20%;
         text-align: center;
         i {
