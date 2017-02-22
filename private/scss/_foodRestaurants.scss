@@ -14,29 +14,29 @@
     position: absolute;
     top: 0;
     width: 100%;
-    .restaurants{
+    .restaurants {
       position: relative;
-      div {
-      display: inline-block;
-      background-color: #fff;
-      width: 40%;
-      height: 150px;
-      float: left;
+      .link {
+        display: inline-block;
+        background-color: #fff;
+        width: 40%;
+        height: 150px;
+        float: left;
         margin-top: 30px;
         margin-left: 25px;
         text-decoration: none;
+        position: absolute;
 
-
-        .title{
+        .title {
           width: 100%;
           height: 70%;
           background-image: url('../../assets/imgs/food_background.jpg');
           background-size: cover;
           margin: 0;
+          position: relative;
 
-
-          h1{
-            font-size: 20px;
+          h1 {
+            font-size: 25px;
             text-transform: none;
             margin: 0;
             color: #fff;
@@ -44,24 +44,27 @@
             left: 10px;
             bottom: 10px;
 
-
           }
         }
-        .meal{
+        .meal {
           width: 100%;
           height: 30%;
+          p{
+            font-size: 15px;
+            margin-left:10px;
+            vertical-align: middle;
+            color: #999;
+          }
         }
+
+      }
+
+      a:nth-of-type(2) {
+        background-color: red;
+        float: right;
+        margin-right: 25px;
+
+      }
     }
-
-
-a:nth-of-type(2){
-background-color: red;
-float: right;
-margin-right: 25px;
-
-
-
-
-    }
-  }}
+  }
 }
