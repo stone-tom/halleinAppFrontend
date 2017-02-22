@@ -16,6 +16,7 @@
     top: 0;
     width: 100%;
     .restaurants {
+      width: 100%;
       position: relative;
       .link {
         display: block;
@@ -24,9 +25,10 @@
         height: 150px;
         float: left;
         margin-top: 30px;
-        margin-left: 25px;
+        margin-left: calc(20% / 3);
         text-decoration: none;
-        position: absolute;
+
+
 
 
 
@@ -64,12 +66,8 @@
 
       }
 
-      &:nth-of-type(2n+2) {
 
-        float: right;
-        margin-right: 25px;
 
-      }
 
     }
   }
