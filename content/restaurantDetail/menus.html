@@ -1,11 +1,11 @@
 <div class="menus">
     <div class="meals">
-    <h1>Vorspeise</h1>
-    <p>Bruschetta</p>
-    <h1>Hauptspeise</h1>
-    <p>Paninis</p>
-    <h1>Nachspeise</h1>
-    <p>Schokopudding</p>
+    <h1 ng-if="menu.appetizer">Vorspeise</h1>
+    <p>{{menu.mainCourse.appetizer}}</p>
+    <h1 ng-if="menu.mainCourse">Hauptspeise</h1>
+    <p>{{menu.mainCourse.description}}</p>
+    <h1 ng-if="menu.dessert">Nachspeise</h1>
+    <p>{{menu.mainCourse.dessert}}</p>
 </div>
 
     <div class="notification">

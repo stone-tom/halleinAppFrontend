@@ -4,7 +4,7 @@
 </div>
 <div class="content">
     <div class="tabs">
-        <a href="#/food"><i class="material-icons">arrow_back</i></a>
+        <div class="link" ng-click="slide('#/food/restaurants', 'right')"><i class="material-icons">arrow_back</i></div>
         <div class="tab" ng-repeat="tab in tabswitcher.tabs" ng-class="{'active': $index==tabswitcher.active}" ng-click="tabswitcher.active = $index">
             <i class="material-icons">{{tab.icon}}</i>
         </div>

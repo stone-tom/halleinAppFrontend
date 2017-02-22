@@ -5,6 +5,11 @@ myApp.controller('restaurantDetailController', function ($scope, $routeParams, $
             $scope.data = response.data[0];
         })
 
+    $http.get(URL + '/menus?restaurant=' + restaurant)
+        .then(function (response) {
+            $scope.menu = response.data[0];
+        })
+
     $scope.slider = {
         current: 0,
         images: [
