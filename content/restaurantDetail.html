@@ -1,14 +1,14 @@
 <div class="restaurantDetailWrapper">
     <div class="slider">
         <img ng-src="{{image.path}}" ng-show="slider.current == $index" ng-repeat="image in slider.images"/>
-    </div>
-    <div class="content">
-        <div class="tabs">
-            <a href="#/food"><i class="material-icons">arrow_back</i></a>
-            <div class="tab" ng-repeat="tab in tabswitcher.tabs" ng-class="{'active': $index==tabswitcher.active}" ng-click="tabswitcher.active = $index">
-                <i class="material-icons">{{tab.icon}}</i>
-            </div>
+</div>
+<div class="content">
+    <div class="tabs">
+        <a href="#/food"><i class="material-icons">arrow_back</i></a>
+        <div class="tab" ng-repeat="tab in tabswitcher.tabs" ng-class="{'active': $index==tabswitcher.active}" ng-click="tabswitcher.active = $index">
+            <i class="material-icons">{{tab.icon}}</i>
         </div>
-        <div class="view" ng-include="'content/' + tabswitcher.tabs[tabswitcher.active].template"></div>
     </div>
+    <div class="view" ng-include="'content/' + tabswitcher.tabs[tabswitcher.active].template"></div>
+</div>
 </div>
