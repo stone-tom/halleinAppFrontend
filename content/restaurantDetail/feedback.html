@@ -2,11 +2,11 @@
 
 
 <div class="bubbles">
-    <div class="bubble" ng-repeat="bubble in bubbles">
+    <div class="bubble" ng-class="{four: bubble.rating == 4, three: bubble.rating == 3, two: bubble.rating == 2, one: bubble.rating == 1}" ng-repeat="bubble in bubbles">
         <div class="restaurant">{{bubble.restaurant}}</div>
         <div class="text">{{bubble.text}}</div>
-        <div class="rating" ng-class="{four: bubble.rating == 4, three: bubble.rating == 3, two: bubble.rating == 2, one: bubble.rating == 1}">{{bubble.rating}}</div>
+        <div class="rating">{{bubble.rating}}</div>
     </div>
 </div>
 
-<button class="givefeedback"><span>DEIN FEEDBACK</span> <i class="material-icons">add</i></button>
+<button class="givefeedback" ng-click="giveFeedback()"><span>FEEDBACK GEBEN</span> <i class="material-icons">add</i></button>

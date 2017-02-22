@@ -136,11 +136,12 @@ z-index: 2;
       overflow: auto;
       .bubble {
         position: relative;
-        background-color: rgba(0, 0, 0, 0.1);
-        width: calc(80% - 40px);
+        background-color: rgba(192, 192, 192, 0.2);
+        width: calc(80% - 20px);
         margin-top: 20px;
         margin-left: 10%;
         padding: 10px;
+        border-radius: 10px;
         .text, .rating {
           display: inline-block;
           vertical-align: middle;
@@ -171,7 +172,7 @@ z-index: 2;
           position: absolute;
           border-style: solid;
           border-width: 15px 15px 15px 0;
-          border-color: transparent rgba(0, 0, 0, 0.1);
+          border-color: transparent rgba(192, 192, 192, 0.2);
           display: block;
           width: 0;
           z-index: 1;
@@ -260,11 +261,7 @@ z-index: 2;
     line-height: 60px;
     position: fixed;
   }
-    span{
-      vertical-align: middle;
-    }
-
-    i{
+    span, i{
       vertical-align: middle;
     }
 
