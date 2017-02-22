@@ -21,7 +21,7 @@ myApp.controller('restaurantDetailController', function ($scope, $routeParams, $
             }
         })
 
-    $http.get(URL + '/feedback?restaurant=' + restaurant + '&status=2')
+    $http.get(URL + '/feedback?orderBy=-created&restaurant=' + restaurant + '&status=2')
         .then(function (response) {
             $scope.bubbles = response.data;
         })
@@ -119,4 +119,30 @@ myApp.controller('restaurantDetailController', function ($scope, $routeParams, $
         {icon: 'credit_card'}
     ]
 
+    $scope.giveFeedback = function() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+        function onDeviceReady() {
+            navigator.notification.prompt(
+                '',  // message
+                onPrompt,                  // callback to invoke
+                'Feedback geben',            // title
+                ['Senden','Abbrechen'],             // buttonLabels
+                ''                 // defaultText
+            );
+        }
+        function onPrompt(results){
+            var text = results.input1;
+            var data = {
+                restaurant: 2,
+                rating: 5,
+                text: text
+            }
+            $http({
+                url: URL + '/feedback',
+                method: 'POST',
+                params: data
+            }).then(function () {
+            });
+        }
+    }
 });
