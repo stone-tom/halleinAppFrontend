@@ -5,10 +5,24 @@ myApp.controller('restaurantDetailController', function ($scope, $routeParams, $
             $scope.data = response.data[0];
         })
 
-    $http.get(URL + '/menus?restaurant=' + restaurant)
-        .then(function (response) {
+    var today = new Date();
+    var weekday = today.getDay() - 1;
+    getMenu();
+    function getMenu() {
+        var data = {
+            restaurant: restaurant,
+            date: dateToString(today)
+        }
+        $http({
+            url: URL + '/menus',
+            method: 'GET',
+            params: data
+        }).then(function (response) {
             $scope.menu = response.data[0];
-        })
+        }, function() {
+            delete $scope.menu;
+        });
+    }
 
     $scope.slider = {
         current: 0,
@@ -18,7 +32,7 @@ myApp.controller('restaurantDetailController', function ($scope, $routeParams, $
         ]
     }
     $scope.dayslider = {
-        current: 0,
+        current: weekday,
         days: [
             'montag',
             'dienstag',
@@ -29,21 +43,29 @@ myApp.controller('restaurantDetailController', function ($scope, $routeParams, $
             'sonntag'
         ]
     }
-    $scope.daysliderBack = function() {
-        if ($scope.dayslider.current == 0){
-            $scope.dayslider.current = $scope.dayslider.days.length - 1
+    $scope.daysliderBack = function () {
+        if ($scope.dayslider.current == 0) {
+            $scope.dayslider.current = $scope.dayslider.days.length - 1;
+            today.setDate(today.getDate() + 6);
         }
         else {
             $scope.dayslider.current--
+            today.setDate(today.getDate() - 1);
         }
+        console.log(today);
+        getMenu();
     }
-    $scope.daysliderForward = function() {
-        if ($scope.dayslider.current == $scope.dayslider.days.length - 1){
-            $scope.dayslider.current = 0
+    $scope.daysliderForward = function () {
+        if ($scope.dayslider.current == $scope.dayslider.days.length - 1) {
+            $scope.dayslider.current = 0;
+            today.setDate(today.getDate() - 6);
         }
         else {
-            $scope.dayslider.current++
+            $scope.dayslider.current++;
+            today.setDate(today.getDate() + 1);
         }
+        console.log(today);
+        getMenu();
     }
 
     var countUp = function () {
@@ -60,12 +82,13 @@ myApp.controller('restaurantDetailController', function ($scope, $routeParams, $
 
     $scope.tabswitcher = {
         active: 0,
-    tabs: [
-        {icon: 'info_outline', template: 'restaurantDetail/general.html'},
-        {icon: 'restaurant', template: 'restaurantDetail/menus.html'},
-        {icon: 'map', template: 'restaurantDetail/location.html'},
-        {icon: 'star_border', template: 'restaurantDetail/feedback.html'},
-    ]};
+        tabs: [
+            {icon: 'info_outline', template: 'restaurantDetail/general.html'},
+            {icon: 'restaurant', template: 'restaurantDetail/menus.html'},
+            {icon: 'map', template: 'restaurantDetail/location.html'},
+            {icon: 'star_border', template: 'restaurantDetail/feedback.html'},
+        ]
+    };
 
     $scope.options = [
         {icon: 'local_parking'},

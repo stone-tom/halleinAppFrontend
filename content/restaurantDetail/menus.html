@@ -1,13 +1,24 @@
 <div class="menus">
     <div class="meals">
+        <ng-if ng-if="menu">
     <h1 ng-if="menu.appetizer">Vorspeise</h1>
     <p>{{menu.mainCourse.appetizer}}</p>
     <h1 ng-if="menu.mainCourse">Hauptspeise</h1>
     <p>{{menu.mainCourse.description}}</p>
     <h1 ng-if="menu.dessert">Nachspeise</h1>
     <p>{{menu.mainCourse.dessert}}</p>
+        </ng-if>
+        <ng-if ng-if="!menu">
+            <h1>Kein Menü eingetragen</h1>
+            <div class="notification">
+                <span>Bei Eintrag benachrichtigen:</span>
+                <label class="switch">
+                    <input type="checkbox" ng-true-value="1" ng-false-value="0">
+                    <div class="slider round"></div>
+                </label>
+            </div>
+        </ng-if>
 </div>
-
     <div class="notification">
         <span>Wöchentlich benachrichtigen:</span>
     <label class="switch">
