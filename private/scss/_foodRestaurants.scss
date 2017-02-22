@@ -11,21 +11,26 @@
     filter: blur(10px);
   }
   .content {
+
     position: absolute;
     top: 0;
     width: 100%;
     .restaurants {
+      width: 100%;
       position: relative;
       .link {
-        display: inline-block;
+        display: block;
         background-color: #fff;
         width: 40%;
         height: 150px;
         float: left;
         margin-top: 30px;
-        margin-left: 25px;
+        margin-left: calc(20% / 3);
         text-decoration: none;
-        position: absolute;
+
+
+
+
 
         .title {
           width: 100%;
@@ -43,6 +48,7 @@
             position: absolute;
             left: 10px;
             bottom: 10px;
+            font-family: "Gotham Medium";
 
           }
         }
@@ -54,17 +60,15 @@
             margin-left:10px;
             vertical-align: middle;
             color: #999;
+            font-family: "Gotham Book"
           }
         }
 
       }
 
-      a:nth-of-type(2) {
-        background-color: red;
-        float: right;
-        margin-right: 25px;
 
-      }
+
+
     }
   }
 }
