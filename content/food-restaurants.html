@@ -1,8 +1,8 @@
-<div class="foodRestaurantsWrapper" ng-swipe-up="slide('#/food', 'up')">
+<div class="foodRestaurantsWrapper">
     <div class="background"></div>
     <div class="content">
         <div class="restaurants">
-        <div class="link" onClick="slide('#/start')" ng-repeat="restaurant in restaurants">
+        <div class="link" onClick="slide('#/food/restaurants/detail')" ng-repeat="restaurant in restaurants">
             <div class="title">
 <h1>{{restaurant.restaurantname}}</h1>
             </div>
