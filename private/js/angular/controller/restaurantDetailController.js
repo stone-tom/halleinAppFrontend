@@ -21,6 +21,11 @@ myApp.controller('restaurantDetailController', function ($scope, $routeParams, $
             }
         })
 
+    $http.get(URL + '/feedback?restaurant=' + restaurant + '&status=2')
+        .then(function (response) {
+            $scope.bubbles = response.data;
+        })
+
     var today = new Date();
     var weekday = today.getDay() - 1;
     getMenu();
@@ -93,10 +98,10 @@ myApp.controller('restaurantDetailController', function ($scope, $routeParams, $
         else {
             $scope.slider.current++;
         }
-        $timeout(countUp, 5000);
+        $timeout(countUp, 3000);
     }
 
-    $timeout(countUp, 5000);
+    $timeout(countUp, 3000);
 
     $scope.tabswitcher = {
         active: 0,

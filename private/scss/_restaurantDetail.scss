@@ -2,10 +2,16 @@
   .slider {
 
     img {
+      position: absolute;
       width: 100%;
-
+      opacity: 0;
+      transition: opacity 1s ease;
+      &.visible{
+opacity: 1;
+      }
     }
     .restaurantname h1{
+      position: absolute;
       height: 160px;
       width: 100%;
       text-align: center;
@@ -14,7 +20,7 @@
       color: #fff;
       font-family: "Gotham Book";
     text-transform: none;
-
+z-index: 2;
     }
   }
   .content {
@@ -51,7 +57,6 @@
       }
     }
     .view {
-      padding: 20px;
       .left, .right{
         display: inline-block;
         width: calc(50% - 40px);
@@ -124,9 +129,64 @@
             margin-right: 10px;
             vertical-align: middle;
           }
-
         }
       }
+    .bubbles {
+    height: calc(100vh - 200px - 62px - 60px);
+      overflow: auto;
+      .bubble {
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.1);
+        width: calc(80% - 40px);
+        margin-top: 20px;
+        margin-left: 10%;
+        padding: 10px;
+        .text, .rating {
+          display: inline-block;
+          vertical-align: middle;
+        }
+        .text {
+          width: 90%;
+        }
+        .rating {
+          font-size: 40px;
+          color: #c86a55;
+          width: calc(10% - 10px);
+          text-align: right;
+          &.four {
+            color: #ee8360;
+          }
+          &.three {
+            color: #ff9064;
+          }
+          &.two {
+            color: #ffaa5a;
+          }
+          &.one {
+            color: #ffb74a;
+          }
+        }
+        &:after {
+          content: '';
+          position: absolute;
+          border-style: solid;
+          border-width: 15px 15px 15px 0;
+          border-color: transparent rgba(0, 0, 0, 0.1);
+          display: block;
+          width: 0;
+          z-index: 1;
+          left: -15px;
+          top: 45px;
+        }
+        &:nth-of-type(2n+2) {
+          &:after {
+            border-width: 15px 0 15px 15px;
+            left: auto;
+            right: -15px;
+          }
+        }
+      }
+    }
     }
 
     .menus {
