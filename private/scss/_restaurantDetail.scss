@@ -99,18 +99,23 @@
           text-decoration: none;
           color: black;
 
-
         }
-
-        .left, .right {
+      }
+        .left {
           display: inline-block;
-          width: calc(50% - 40px);
+          width: calc(45% - 40px);
           padding: 5px 0;
           vertical-align: top;
-          &.border {
-            border-left: 1px solid #ee8360;
-            padding-left: 20px;
-          }
+        }
+          .right {
+            display: inline-block;
+            width: calc(55% - 40px);
+            padding: 5px 0;
+            vertical-align: top;
+            &.border {
+              border-left: 1px solid #ee8360;
+              padding-left: 20px;
+            }
         }
         .general {
           padding: 10px 20px;
@@ -171,4 +176,4 @@
     }
   }
 
-}
+

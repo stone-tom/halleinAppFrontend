@@ -3,6 +3,22 @@ myApp.controller('restaurantDetailController', function ($scope, $routeParams, $
     $http.get(URL + '/restaurants?id=' + restaurant)
         .then(function (response) {
             $scope.data = response.data[0];
+            $scope.data.websiteFormatted = $scope.data.website;
+           if ($scope.data.websiteFormatted.startsWith('http://')) {
+               $scope.data.websiteFormatted = $scope.data.websiteFormatted.substring(7)
+
+           }
+           else if( $scope.data.websiteFormatted.startsWith('https://')) {
+               $scope.data.websiteFormatted = $scope.data.websiteFormatted.substring(8)
+           }
+            if ($scope.data.websiteFormatted.endsWith('/')) {
+                $scope.data.websiteFormatted = $scope.data.websiteFormatted.substring(0, $scope.data.websiteFormatted.length-1 )
+
+            }
+            if ($scope.data.websiteFormatted.length > 13) {
+                $scope.data.websiteFormatted = "Website"
+
+            }
         })
 
     $http.get(URL + '/menus?restaurant=' + restaurant)
@@ -72,4 +88,5 @@ myApp.controller('restaurantDetailController', function ($scope, $routeParams, $
         {icon: 'pets'},
         {icon: 'credit_card'}
     ]
+
 });
