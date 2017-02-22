@@ -6,6 +6,34 @@ myApp.controller('restaurantDetailController', function ($scope, $timeout) {
             {path: 'assets/imgs/start_background.jpg'}
         ]
     }
+    $scope.dayslider = {
+        current: 0,
+        days: [
+            'montag',
+            'dienstag',
+            'mittwoch',
+            'donnerstag',
+            'freitag',
+            'samstag',
+            'sonntag'
+        ]
+    }
+    $scope.daysliderBack = function() {
+        if ($scope.dayslider.current == 0){
+            $scope.dayslider.current = $scope.dayslider.days.length - 1
+        }
+        else {
+            $scope.dayslider.current--
+        }
+    }
+    $scope.daysliderForward = function() {
+        if ($scope.dayslider.current == $scope.dayslider.days.length - 1){
+            $scope.dayslider.current = 0
+        }
+        else {
+            $scope.dayslider.current++
+        }
+    }
 
     var countUp = function () {
         if ($scope.slider.current == $scope.slider.images.length - 1) {

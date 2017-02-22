@@ -135,7 +135,20 @@
           vertical-align: middle;
         }
       }
-
+      .day {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        border: none;
+        text-align: center;
+        padding: 20px 0px;
+        color: black;
+        vertical-align: middle;
+        i{
+          vertical-align: middle;
+        }
+      }
     }
   }
 
