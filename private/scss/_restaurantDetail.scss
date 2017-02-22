@@ -79,10 +79,14 @@
           left: 0;
           border: none;
           background-image: url('../../assets/imgs/maps.PNG');
+          background-repeat: no-repeat;
+          background-size: cover;
           text-align: center;
           padding: 20px 0px;
           text-decoration: none;
           color: black;
+
+
         }
 
         .left, .right {
@@ -145,6 +149,8 @@
         padding: 20px 0px;
         color: black;
         vertical-align: middle;
+        text-transform: uppercase;
+        background-color: rgba(0,0,0,0.1);
         i{
           vertical-align: middle;
         }
