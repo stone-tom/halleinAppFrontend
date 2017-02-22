@@ -1,13 +1,12 @@
 <div class="general">
-    <p>Original italienische Pizza, auch zum Mitnehmen! Kleiner Gastgarten, Tischreservierungen erbeten, geschlossene
-        Gesellschaften gern auf Anfrage.</p>
+    <p>{{data.description}}</p>
     <div class="left">
     <div class="icons">
         <i class="material-icons" ng-repeat="option in options">{{option.icon}}</i>
     </div>
     </div>
     <div class="right border">
-        <div ng-if="data.phone"><i class="material-icons">phone</i><a href="tel:{{data.phone}}">{{data.phone}}</a></div>
+        <div ng-if="data.phone"><i class="material-icons">phone</i><a href="tel:{{data.tel}}">{{data.tel}}</a></div>
         <div ng-if="data.website"><i class="material-icons">public</i><a ng-href="data.website">{{data.website}}</a></div>
         <div><i class="material-icons">access_time</i>{{data.openingTimes}}</div>
     </div>

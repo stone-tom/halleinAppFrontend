@@ -32,7 +32,7 @@ myApp.config(function ($routeProvider) {
             templateUrl: 'content/start.html',
             controller: 'startController',
         })
-        .when('/food/restaurants/detail', {
+        .when('/food/restaurants/detail/:restaurant', {
             templateUrl: 'content/restaurantDetail.html',
             controller: 'restaurantDetailController',
         })

@@ -1,4 +1,10 @@
-myApp.controller('restaurantDetailController', function ($scope, $timeout) {
+myApp.controller('restaurantDetailController', function ($scope, $routeParams, $http, $timeout) {
+    var restaurant = $routeParams.restaurant;
+    $http.get(URL + '/restaurants?id=' + restaurant)
+        .then(function (response) {
+            $scope.data = response.data[0];
+        })
+
     $scope.slider = {
         current: 0,
         images: [
@@ -61,9 +67,4 @@ myApp.controller('restaurantDetailController', function ($scope, $timeout) {
         {icon: 'pets'},
         {icon: 'credit_card'}
     ]
-
-    $scope.data = {
-        phone: '06245 212',
-        website: 'http://cleitzlers.com'
-    }
 });
