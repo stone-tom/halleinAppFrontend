@@ -15,7 +15,7 @@ myApp.controller('restaurantDetailController', function ($scope, $routeParams, $
                 $scope.data.websiteFormatted = $scope.data.websiteFormatted.substring(0, $scope.data.websiteFormatted.length-1 )
 
             }
-            if ($scope.data.websiteFormatted.length > 13) {
+            if ($scope.data.websiteFormatted.length > 14) {
                 $scope.data.websiteFormatted = "Website"
 
             }
