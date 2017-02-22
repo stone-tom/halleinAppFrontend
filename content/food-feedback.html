@@ -5,7 +5,7 @@
             <div class="bubble" ng-repeat="bubble in bubbles">
                 <div class="restaurant">{{bubble.restaurant}}</div>
                 <div class="text">{{bubble.text}}</div>
-                <div class="rating">{{bubble.rating}}</div>
+                <div class="rating" ng-class="{{bubble.rating == 3}}: 'three'">{{bubble.rating}}</div>
             </div>
         </div>
     </div>
