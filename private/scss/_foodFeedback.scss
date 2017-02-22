@@ -1,27 +1,58 @@
-.foodFeedbackWrapper{
+.foodFeedbackWrapper {
   background: #750707;
   width: 100%;
-  height:100vh;
-  .background{
+  height: 100vh;
+  .background {
     background-image: url('../../assets/imgs/food_background.jpg');
     background-size: cover;
     width: 100%;
     height: 100%;
     opacity: .4;
+    filter: blur(10px);
   }
-  .content{
+  .content {
     position: absolute;
     top: 0;
     width: 100%;
-    h1{
-      font-family: 'Gotham Book';
-      font-size: 45px;
-      font-weight: normal;
-      color: #fff;
-      text-align: center;
-      text-transform:uppercase;
-      margin:0;
-      margin-top: 30%;
+    .bubble {
+      position: relative;
+      background-color: #fff;
+      width: 60%;
+      margin-top: 20px;
+      margin-left: 15%;
+      padding: 10px;
+      .text, .rating {
+        display: inline-block;
+        vertical-align: top;
+      }
+      .text {
+        width: 90%;
+      }
+      .rating {
+        font-size: 40px;
+        color: #ee8360;
+        width: calc(10% - 10px);
+        text-align: right;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        border-style: solid;
+        border-width: 15px 15px 15px 0;
+        border-color: transparent #fff;
+        display: block;
+        width: 0;
+        z-index: 1;
+        left: -14px;
+        top: 45px;
+      }
+      &:nth-of-type(2n+2){
+        &:after {
+          border-width: 15px 0 15px 15px;
+          left: auto;
+          right: -14px;
+        }
+      }
     }
   }
 }

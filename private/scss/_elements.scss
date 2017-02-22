@@ -19,6 +19,23 @@ h2 {
   margin-bottom: 20px;
 }
 
+.material-icons {
+  &.doneicon, &.cancelicon {
+    position: fixed;
+    font-size: 30px;
+    background-color: #27ae60;
+    color: #fff;
+    bottom: 35px;
+    right: 35px;
+    padding: 15px;
+    border-radius: 50%;
+  }
+  &.cancelicon {
+    background-color: #e74c3c;
+    right: 110px;
+  }
+}
+
 .checkbox {
 
   input {
@@ -50,6 +67,7 @@ h2 {
   width: 60px;
   height: 34px;
 }
+
 /* Hide default HTML checkbox */
 .switch input {
   display: none;

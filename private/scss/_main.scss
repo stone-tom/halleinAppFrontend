@@ -23,3 +23,71 @@ url('../../assets/fonts/Gotham-Medium.woff') format('woff')
 body{
   margin: 0;
 }
+
+// Switch animations
+.slide {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  -o-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+.slide.ng-enter,
+.slide.ng-leave {
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  -o-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  &.up, &.right, &.down, &.left {
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+  }
+}
+.slide.ng-enter {
+  &.up{
+    top: 100%;
+  }
+  &.right{
+    right: 100%;
+  }
+  &.down{
+    bottom: 100%;
+  }
+  &.left{
+    left: 100%;
+  }
+}
+.slide.ng-enter-active, .slide.ng-leave{
+  &.up{
+    top: 0;
+  }
+  &.right{
+    right: 0;
+  }
+  &.down {
+    bottom: 0;
+  }
+  &.left{
+    left: 0;
+  }
+}
+.slide.ng-leave-active {
+  &.up{
+    top: -100%;
+  }
+  &.right{
+    right: -100%;
+  }
+  &.down{
+    bottom: -100%;
+  }
+  &.left{
+    left: -100%;
+  }
+}

@@ -7,6 +7,12 @@
     <!-- AngularJS -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-touch.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.js"></script>
+    <!-- angular-swipe (for swipe up and dow) -->
+    <script src="assets/plugins/angular-swipe/angular-swipe.js"></script>
+    <!-- cordova -->
+    <script src="cordova.js"></script>
     <!-- Stylesheet -->
     <link rel="stylesheet" href="public/css/style.css" media="screen">
     <!-- JS -->
@@ -15,6 +21,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body ng-app="myApp" ng-controller="mainController">
-<div ng-view></div>
+<div class="slide" ng-class="viewAnimationDirection" ng-view></div>
 </body>
 </html>
