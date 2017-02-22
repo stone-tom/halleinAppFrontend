@@ -93,10 +93,10 @@ myApp.controller('restaurantDetailController', function ($scope, $routeParams, $
         else {
             $scope.slider.current++;
         }
-        $timeout(countUp, 5000);
+        $timeout(countUp, 3000);
     }
 
-    $timeout(countUp, 5000);
+    $timeout(countUp, 3000);
 
     $scope.tabswitcher = {
         active: 0,

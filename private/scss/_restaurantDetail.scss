@@ -2,10 +2,16 @@
   .slider {
 
     img {
+      position: absolute;
       width: 100%;
-
+      opacity: 0;
+      transition: opacity 1s ease;
+      &.visible{
+opacity: 1;
+      }
     }
     .restaurantname h1{
+      position: absolute;
       height: 160px;
       width: 100%;
       text-align: center;
@@ -14,7 +20,7 @@
       color: #fff;
       font-family: "Gotham Book";
     text-transform: none;
-
+z-index: 2;
     }
   }
   .content {
@@ -51,7 +57,6 @@
       }
     }
     .view {
-      padding: 20px;
       .left, .right{
         display: inline-block;
         width: calc(50% - 40px);
