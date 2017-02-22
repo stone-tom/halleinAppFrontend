@@ -44,7 +44,9 @@ myApp.controller('restaurantDetailController', function ($scope, $routeParams, $
         current: 0,
         images: [
             {path: 'assets/imgs/food_background.jpg'},
-            {path: 'assets/imgs/start_background.jpg'}
+            {path: 'assets/imgs/local1.jpg'},
+            {path: 'assets/imgs/local2.jpg'},
+            {path: 'assets/imgs/local3.jpg'}
         ]
     }
     $scope.dayslider = {
