@@ -10,8 +10,10 @@
     <div class="sexes">
         <div class="sex" ng-class="{'active': $index==sexes.active}" ng-repeat="sex in sexes.options" ng-click="sexes.active = $index">{{sex.name}}</div></div>
     <br>
-    <h2>Geburtsjahr:</h2>
-    <input type="text">
+    <h2>Geburtstag:</h2>
+    <div class="sexes">
+        <div class="sex" onClick="datepicker()">Auswählen</div>
+    </div>
     <br>
 
 

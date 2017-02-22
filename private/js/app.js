@@ -22,21 +22,29 @@ var options = {
     "androiddelay"   :  0  // same as above but for Android, default 50
 };
 
-window.plugins.nativepagetransitions.slide(
-    options,
-    function (msg) {console.log("success: " + msg)}, // called when the animation has finished
-    function (msg) {alert("error: " + msg)} // called in case you pass in weird values
-);
-
 // wait for deviceready..
 document.addEventListener("deviceready", function() {
     // then override any default you want
-    window.plugins.nativepagetransitions.globalOptions.duration = 700;
-    window.plugins.nativepagetransitions.globalOptions.iosdelay = 100;
-    window.plugins.nativepagetransitions.globalOptions.androiddelay = 150;
-    window.plugins.nativepagetransitions.globalOptions.winphonedelay = 175;
-    window.plugins.nativepagetransitions.globalOptions.slowdownfactor = 8;
+    window.plugins.nativepagetransitions.globalOptions.duration = 400;
+    window.plugins.nativepagetransitions.globalOptions.iosdelay = 0;
+    window.plugins.nativepagetransitions.globalOptions.androiddelay = 0;
+    window.plugins.nativepagetransitions.globalOptions.winphonedelay = 0;
+    window.plugins.nativepagetransitions.globalOptions.slowdownfactor = 4;
     // these are used for slide left/right only currently
-    window.plugins.nativepagetransitions.globalOptions.fixedPixelsTop = 64;
-    window.plugins.nativepagetransitions.globalOptions.fixedPixelsBottom = 48;
+    window.plugins.nativepagetransitions.globalOptions.fixedPixelsTop = 0;
+    window.plugins.nativepagetransitions.globalOptions.fixedPixelsBottom = 0;
 }, false);
+
+function datepicker() {
+    var options = {
+        date: new Date(),
+        mode: 'date',
+        windowTitle: '',
+        doneButtonLabel: 'Fertig',
+        cancelButtonLabel: 'Abbrechen'
+    };
+
+    datePicker.show(options, function(date){
+        //alert("date result " + date);
+    });
+}

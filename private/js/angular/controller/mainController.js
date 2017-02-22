@@ -1,4 +1,4 @@
-myApp.controller('mainController', function ($scope) {
+myApp.controller('mainController', function ($scope, $location) {
     $scope.slide = function(href, direction){
         slide(href, direction);
     }
