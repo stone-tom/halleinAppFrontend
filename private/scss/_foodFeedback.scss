@@ -17,22 +17,34 @@
     .bubble {
       position: relative;
       background-color: #fff;
-      width: 60%;
+      width: calc(80% - 40px);
       margin-top: 20px;
-      margin-left: 15%;
+      margin-left: 10%;
       padding: 10px;
       .text, .rating {
         display: inline-block;
-        vertical-align: top;
+        vertical-align: middle;
       }
       .text {
         width: 90%;
       }
       .rating {
         font-size: 40px;
-        color: #ee8360;
+        color: #c86a55;
         width: calc(10% - 10px);
         text-align: right;
+        &.four{
+          color: #ee8360;
+        }
+        &.three{
+          color: #ff9064;
+        }
+        &.two{
+          color: #ffaa5a;
+        }
+        &.one{
+          color: #ffb74a;
+        }
       }
       &:after {
         content: '';
