@@ -1,4 +1,5 @@
-myApp.controller('homeController', function ($scope, $http) {	
+myApp.controller('homeController', function ($scope, $http) {
+	/*
 	document.addEventListener("deviceready", onDeviceReady, false);
 	function onDeviceReady() {
 		if (cordova.platformId == 'android') {
@@ -18,4 +19,5 @@ myApp.controller('homeController', function ($scope, $http) {
 			});
 		}
 	}
+	*/
 });
