@@ -34,5 +34,74 @@
       top: 170px;
       margin: 0;
     }
+.arrowLeft{
+  position: absolute;
+  vertical-align: middle;
+  margin-top: 50vh;
+  img{
+    height: 60px;
+    width: 60px;
+    vertical-align: middle;
+  }
+  .description{
+    display: inline-block;
+    font-family: "Gotham Book";
+    background-color: rgba(236, 207, 119, 0.7);
+
+    vertical-align: middle;
+    text-align: center;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+}
+
+    .arrowRight{
+      position: absolute;
+      right: 0;
+      margin-top: 50vh;
+      img{
+        height: 60px;
+        width: 60px;
+        vertical-align: middle;
+      }
+      .description{
+        display: inline-block;
+        font-family: "Gotham Book";
+        background-color: rgba(238, 131, 96, 0.7);
+
+        vertical-align: middle;
+        text-align: center;
+        padding: 10px 15px;
+        text-transform: uppercase;
+        color: #fff;
+      }
+
+    }
+    .arrowDown{
+      position: absolute;
+      bottom: 0;
+      left: calc(50% - 80px);
+
+      img{
+        height: 60px;
+        width: 60px;
+        vertical-align: middle;
+      }
+      .description{
+        display: inline-block;
+        font-family: "Gotham Book";
+        background-color: rgba(236, 207, 119, 0.7);
+
+        vertical-align: middle;
+        text-align: center;
+        padding: 10px 15px;
+        text-transform: uppercase;
+        color: #fff;
+      }
+
+    }
+
   }
 }
