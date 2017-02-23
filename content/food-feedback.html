@@ -1,6 +1,9 @@
 <div class="foodFeedbackWrapper" ng-swipe-down="slide('#/food', 'down')">
     <div class="background"></div>
     <div class="content">
+        <div class="filter" ng-click="feedbacksliderUp()">
+        <h1 >{{feedbackSlider.option[feedbackSlider.current].name}}</h1> <img  src="assets/icons/up_down.png" class="filtericon">
+        </div>
         <div class="bubbles">
             <div class="bubble" ng-repeat="bubble in bubbles">
                 <div class="restaurant">{{bubble.restaurant}}</div>
@@ -10,3 +13,4 @@
         </div>
     </div>
 </div>
+
