@@ -4,4 +4,5 @@ myApp.controller('establishmentController', function ($scope) {
             {name: 'MÄNNLICH'},
             {name: 'WEIBLICH'}]
     }
+    $scope.input = {};
 });

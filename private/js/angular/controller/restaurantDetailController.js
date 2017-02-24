@@ -1,4 +1,11 @@
 myApp.controller('restaurantDetailController', function ($scope, $routeParams, $http, $timeout) {
+    new Swiper ('.swiper-container-tabs', {
+        // Optional parameters
+        direction: 'horizontal',
+        pagination: '.swiper-pagination',
+        paginationType: 'progress'
+    })
+
     var restaurant = $routeParams.restaurant;
     $http.get(URL + '/restaurants?id=' + restaurant)
         .then(function (response) {

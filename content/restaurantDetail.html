@@ -7,11 +7,112 @@
 </div>
 <div class="content">
     <div class="tabs">
+    <div class="link" ng-click="slide('#/food/restaurants', 'right')"><i class="material-icons">arrow_back</i></div>
+    <div class="tab" ng-repeat="tab in tabswitcher.tabs" ng-class="{'active': $index==tabswitcher.active}" ng-click="tabswitcher.active = $index">
+        <i class="material-icons">{{tab.icon}}</i>
+    </div>
+        </div>
+    <div class="view">
+        <div class="swiper-container-tabs">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="general">
+                        <p>{{data.description}}</p>
+                        <div class="left">
+                            <div class="icons">
+                                <i class="material-icons" ng-repeat="option in options">{{option.icon}}</i>
+                            </div>
+                        </div>
+                        <div class="right border">
+                            <div ng-if="data.tel"><i class="material-icons">phone</i><a href="tel:{{data.tel}}">{{data.tel}}</a></div>
+                            <div ng-if="data.website"><i class="material-icons">public</i><a ng-href="{{data.website}}">{{data.websiteFormatted}}</a></div>
+                            <div><i class="material-icons">access_time</i>{{data.openingTimes}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="menus">
+                        <div class="meals">
+                            <ng-if ng-if="menu">
+                                <h1 ng-if="menu.appetizer">Vorspeise</h1>
+                                <p>{{menu.mainCourse.appetizer}}</p>
+                                <h1 ng-if="menu.mainCourse">Hauptspeise</h1>
+                                <p>{{menu.mainCourse.description}}</p>
+                                <h1 ng-if="menu.dessert">Nachspeise</h1>
+                                <p>{{menu.mainCourse.dessert}}</p>
+                            </ng-if>
+                            <ng-if ng-if="!menu">
+
+                                <h1>Kein Menü eingetragen</h1>
+                                <div class="notification">
+                                    <span>Bei Eintrag benachrichtigen:</span>
+                                    <label class="switch">
+                                        <input type="checkbox" ng-true-value="1" ng-false-value="0">
+                                        <div class="slider round"></div>
+                                    </label>
+                                </div>
+                            </ng-if>
+                        </div>
+                        <div class="notification">
+                            <span>Wöchentlich benachrichtigen:</span>
+                            <label class="switch">
+                                <input type="checkbox" ng-true-value="1" ng-false-value="0">
+                                <div class="slider round"></div>
+                            </label>
+                        </div>
+                        <div class="day" ng-swipe-right="daysliderBack()"  ng-swipe-left="daysliderForward()">
+                            <i class="material-icons" ng-click="daysliderBack()" >keyboard_arrow_left </i> {{dayslider.days[dayslider.current]}} <i class="material-icons" ng-click="daysliderForward()" > keyboard_arrow_right </i>
+
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+                <div class="swiper-slide">
+                    <div class="location">
+                        <div class ="Adresse">
+                            <h1>Adresse</h1>
+
+                            <div class="Straße">
+                                <h1>{{data.street}} {{data.houseNumber}}, {{data.countryCode}} {{data.country}}</h1>
+                            </div>
+                            <div class="maps">
+
+                                <a href="http://maps.google.com/maps?q={{data.street}}+{{data.houseNumber}}+{{data.countryCode}}+{{data.country}}" class="button">ÖFFNE GOOGLE MAPS</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+
+
+
+                    <div class="bubbles">
+                        <div class="bubble" ng-class="{four: bubble.rating == 4, three: bubble.rating == 3, two: bubble.rating == 2, one: bubble.rating == 1}" ng-repeat="bubble in bubbles">
+                            <div class="restaurant">{{bubble.restaurant}}</div>
+                            <div class="text">{{bubble.text}}</div>
+                            <div class="rating">{{bubble.rating}}</div>
+                        </div>
+                    </div>
+
+                    <button class="givefeedback" ng-click="giveFeedback()"><span>FEEDBACK GEBEN</span> <i class="material-icons">add</i></button>
+
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        </div>
+        <!--
         <div class="link" ng-click="slide('#/food/restaurants', 'right')"><i class="material-icons">arrow_back</i></div>
         <div class="tab" ng-repeat="tab in tabswitcher.tabs" ng-class="{'active': $index==tabswitcher.active}" ng-click="tabswitcher.active = $index">
             <i class="material-icons">{{tab.icon}}</i>
         </div>
     </div>
     <div class="view" ng-include="'content/' + tabswitcher.tabs[tabswitcher.active].template"></div>
+
+    -->
 </div>
 </div>

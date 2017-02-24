@@ -18,8 +18,9 @@
         margin-top: 30px;
         margin-left: calc(20% / 3);
         text-decoration: none;
+        transition: transform .3s ease;
         &:active{
-          transform: scale.3;
+          transform: scale(.3);
         }
 
 

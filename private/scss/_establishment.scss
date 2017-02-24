@@ -19,12 +19,16 @@ color: white;
 
 
   }
-  input{
+  .birthday{
     background: rgba(128, 128, 128, 0.3);
-    width: 80px;
+    width: 100px;
     padding: 8px 10px;
     border: none;
     outline: none;
+    &.active{
+      background-color: #27ae60;
+      color: white;
+    }
   }
 
 }
