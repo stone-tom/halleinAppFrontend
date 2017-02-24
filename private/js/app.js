@@ -34,17 +34,3 @@ document.addEventListener("deviceready", function() {
     window.plugins.nativepagetransitions.globalOptions.fixedPixelsTop = 0;
     window.plugins.nativepagetransitions.globalOptions.fixedPixelsBottom = 0;
 }, false);
-
-function datepicker() {
-    var options = {
-        date: new Date(),
-        mode: 'date',
-        windowTitle: '',
-        doneButtonLabel: 'Fertig',
-        cancelButtonLabel: 'Abbrechen'
-    };
-
-    datePicker.show(options, function(date){
-        //alert("date result " + date);
-    });
-}

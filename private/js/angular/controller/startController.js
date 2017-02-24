@@ -6,6 +6,6 @@ myApp.controller('startController', function ($scope) {
     new Swiper ('.swiper-container-vertical', {
         // Optional parameters
         direction: 'vertical',
-        initialSlide: 1
+        initialSlide: 2
     })
 });
