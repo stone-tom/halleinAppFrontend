@@ -21,10 +21,14 @@ myApp.controller('restaurantDetailController', function ($scope, $routeParams, $
             }
         })
 
-    $http.get(URL + '/feedback?orderBy=-created&restaurant=' + restaurant + '&status=2')
-        .then(function (response) {
-            $scope.bubbles = response.data;
-        })
+    getFeedback();
+
+    function getFeedback() {
+        $http.get(URL + '/feedback?orderBy=-created&restaurant=' + restaurant + '&status=2')
+            .then(function (response) {
+                $scope.bubbles = response.data;
+            })
+    }
 
     var today = new Date();
     var weekday = today.getDay() - 1;
@@ -142,6 +146,7 @@ myApp.controller('restaurantDetailController', function ($scope, $routeParams, $
                 method: 'POST',
                 params: data
             }).then(function () {
+                getFeedback();
             });
         }
     }
