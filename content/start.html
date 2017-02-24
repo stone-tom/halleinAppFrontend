@@ -1,25 +1,89 @@
-<div class="startWrapper" ng-swipe-left="slide('#/food')">
-    <div class="background"></div>
-    <div class="content">
+<div class="swiper-container-horizontal">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+            <div class="startWrapper">
+                <div class="background"></div>
+                <div class="content">
 
-        <div class="arrowLeft">
-            <img src="assets/icons/arrow_left.png"><a class="description">Taxi</a>
+                    <!--
+                    <div class="arrowLeft">
+                        <img src="assets/icons/arrow_left.png"><a class="description">Taxi</a>
 
+                    </div>
+                    <div class="arrowRight">
+                        <a class="description">Essen</a><img src="assets/icons/arrow_right.png">
+
+                    </div>
+
+                    <div class="arrowDown">
+                        <a class="description">Einstellungen</a>
+                        <br>
+                        <img src="assets/icons/arrow_down.png">
+
+
+                    </div>
+                    -->
+
+                    <h1>Hallein</h1>
+                    <h2>Zum Starten wischen</h2>
+                </div>
+            </div>
         </div>
-        <div class="arrowRight">
-            <a class="description">Essen</a><img src="assets/icons/arrow_right.png">
-
+        <div class="swiper-slide">
+            <div class="foodWrapper">
+                <div class="background"></div>
+                <div class="content">
+                    <div class="swiper-container-vertical">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide">
+                                <div class="foodRestaurantsWrapper" ng-controller="foodRestaurantsController">
+                                    <div class="restaurants">
+                                        <div class="link" ng-click="slide('#/food/restaurants/detail/' + restaurant.id)"
+                                             ng-repeat="restaurant in restaurants">
+                                            <div class="title">
+                                                <h1>{{restaurant.restaurantname}}</h1>
+                                            </div>
+                                            <div class="meal" ng-if="restaurant.menu">
+                                                <p ng-if="restaurant.menu.mainCourse.description.length > 23">
+                                                    {{restaurant.menu.mainCourse.description | limitTo: 20}}...</p>
+                                                <p ng-if="restaurant.menu.mainCourse.description.length <= 23">
+                                                    {{restaurant.menu.mainCourse.description}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="foodWrapper">
+                                    <h1>Essen</h1>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="foodFeedbackWrapper" ng-controller="foodFeedbackController">
+                                    <div class="filter" ng-click="feedbacksliderUp()">
+                                        <h1>{{feedbackSlider.option[feedbackSlider.current].name}}</h1> <img
+                                            src="assets/icons/up_down.png" class="filtericon">
+                                    </div>
+                                    <div class="bubbles">
+                                        <div class="bubble" ng-repeat="bubble in bubbles">
+                                            <div class="restaurant">{{bubble.restaurant}}</div>
+                                            <div class="text">{{bubble.text}}</div>
+                                            <div class="rating"
+                                                 ng-class="{four: bubble.rating == 4, three: bubble.rating == 3, two: bubble.rating == 2, one: bubble.rating == 1}">
+                                                {{bubble.rating}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="arrowDown">
-            <a class="description">Einstellungen</a>
-            <br>
-            <img src="assets/icons/arrow_down.png">
-
-
-        </div>
-
-        <h1>Hallein</h1>
-        <h2>Zum Starten wischen</h2>
     </div>
 </div>

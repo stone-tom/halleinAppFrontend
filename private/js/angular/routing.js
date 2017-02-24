@@ -39,6 +39,10 @@ myApp.config(function ($routeProvider) {
         .when('/establishment', {
             templateUrl: 'content/establishment.html',
             controller: 'establishmentController',
+            nativeTransitions: {
+                "type": "flip",
+                "direction": "up"
+            }
         })
         .when('/settings', {
             templateUrl: 'content/settings.html',
