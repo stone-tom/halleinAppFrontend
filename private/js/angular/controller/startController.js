@@ -1,10 +1,10 @@
 myApp.controller('startController', function ($scope) {
-    new Swiper ('.swiper-container-horizontal', {
+    var swiper = new Swiper ('.swiper-container-horizontal', {
         // Optional parameters
-        direction: 'horizontal',
+        direction: 'horizontal'
     })
-    new Swiper ('.swiper-container-vertical', {
+   new Swiper ('.swiper-container-vertical', {
         // Optional parameters
-        direction: 'vertical',
+        direction: 'vertical'
     })
 });
