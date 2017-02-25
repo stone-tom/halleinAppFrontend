@@ -12,7 +12,7 @@
         <i class="material-icons">{{tab.icon}}</i>
     </div>
         </div>
-    <div class="view">
+
         <div class="swiper-container-tabs">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -72,14 +72,13 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="location">
-                        <div class ="Adresse">
+                        <div class="Adresse">
                             <h1>Adresse</h1>
 
                             <div class="Straße">
                                 <h1>{{data.street}} {{data.houseNumber}}, {{data.countryCode}} {{data.country}}</h1>
                             </div>
                             <div class="maps">
-
                                 <a href="http://maps.google.com/maps?q={{data.street}}+{{data.houseNumber}}+{{data.countryCode}}+{{data.country}}" class="button">ÖFFNE GOOGLE MAPS</a>
                             </div>
 
@@ -88,7 +87,7 @@
                 </div>
                 <div class="swiper-slide">
 
-
+                    <div class="feedback">
 
                     <div class="bubbles">
                         <div class="bubble" ng-class="{four: bubble.rating == 4, three: bubble.rating == 3, two: bubble.rating == 2, one: bubble.rating == 1}" ng-repeat="bubble in bubbles">
@@ -99,12 +98,12 @@
                     </div>
 
                     <button class="givefeedback" ng-click="giveFeedback()"><span>FEEDBACK GEBEN</span> <i class="material-icons">add</i></button>
-
+</div>
                 </div>
             </div>
             <div class="swiper-pagination"></div>
         </div>
-        </div>
+
         <!--
         <div class="link" ng-click="slide('#/food/restaurants', 'right')"><i class="material-icons">arrow_back</i></div>
         <div class="tab" ng-repeat="tab in tabswitcher.tabs" ng-class="{'active': $index==tabswitcher.active}" ng-click="tabswitcher.active = $index">
