@@ -1,6 +1,4 @@
 myApp.controller('startController', function ($scope) {
-<<<<<<< HEAD
-=======
     new Swiper ('.swiper-container-start-horizontal', {
         // Optional parameters
         direction: 'horizontal'
@@ -16,5 +14,4 @@ myApp.controller('startController', function ($scope) {
         initialSlide: 1,
 
     })
->>>>>>> 5c67485eb3e07d4fb160da1ad60d29433e882b69
 });
