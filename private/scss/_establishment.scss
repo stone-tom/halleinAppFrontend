@@ -1,36 +1,23 @@
-.settingsWrapper {
+.establishmentWrapper {
   padding: 20px;
-  font-family:"Gotham Book";
-  .sexes{
-    .sex{
-
+  .sexes {
+    .sex {
       display: inline-block;
+      background-color: rgba(128, 128, 128, 0.3);
       margin-right: 10px;
       padding: 8px 20px;
-      height: auto;
-      background-color: rgba(128, 128, 128, 0.3);
-&.active{
-  background-color: #27ae60;
-color: white;
-}
-
-
+      &.active {
+        background-color: #27ae60;
+        color: #fff;
+      }
     }
-
-
   }
-  .birthday{
+  .birthday {
     background: rgba(128, 128, 128, 0.3);
     width: 100px;
-    padding: 8px 10px;
-    border: none;
-    outline: none;
-    &.active{
+    &.active {
       background-color: #27ae60;
-      color: white;
+      color: #fff;
     }
   }
-
 }
-
-

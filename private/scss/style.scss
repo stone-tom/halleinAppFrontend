@@ -1,8 +1,8 @@
-$primary-font: 'Gravity', sans-serif;
-$primary-color: #444;
-$accent-color: #2b2f38;
+$light-font: 'Gotham Book';
+$bold-font: 'Gotham Medium';
 
 @import 'main';
+@import 'welcome';
 @import 'elements';
 @import 'home';
 @import 'interests';

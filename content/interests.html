@@ -3,10 +3,10 @@
     <p>Wofür interessieren Sie sich? Was mögen Sie an Hallein und worüber möchten Sie benachrichtigt werden?</p>
     <h2>Verfügbare Interessen (Tippen für Auswahl):</h2>
     <div class="interests">
-        <div class="interest" ng-class="{interest.color}" ng-repeat="interest in interests" ng-click="interest.active = !interest.active">
+        <div class="interest" ng-repeat="interest in interests" ng-click="interest.active = !interest.active">
             <span>{{interest.name}}</span>
             <i class="material-icons " ng-show="interest.active">done</i>
         </div>
     </div>
-    <div onClick="slide('#/newsletter')"><i class="material-icons doneicon">done</i></div>
+    <div ng-click="slide('#/newsletter')"><i class="material-icons doneicon">done</i></div>
 </div>

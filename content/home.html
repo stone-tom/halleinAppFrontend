@@ -1,14 +1,14 @@
-<div class="homeWrapper" ng-click="slide('#/establishment')">
-    <div class="background"></div>
-    <div class="content">
-        <h1>Hallo</h1>
-        <h2>
-            Willkommen in der brandneuen
-            <br/>
-            Hallein App
-        </h2>
-        <div class="start">
-            Zum Starten berühren
+<div class="swiper-container-horizontal">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><div ng-include="'content/start.html'"></div></div>
+        <div class="swiper-slide">
+            <div class="swiper-container-vertical">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><div ng-include="'content/food-restaurants.html'"></div></div>
+                    <div class="swiper-slide"><div ng-include="'content/food.html'"></div></div>
+                    <div class="swiper-slide"><div ng-include="'content/food-feedback.html'"></div></div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

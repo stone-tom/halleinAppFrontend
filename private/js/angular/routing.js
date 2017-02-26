@@ -1,12 +1,12 @@
-var myApp = angular.module('myApp', ['ngRoute', 'ngTouch', 'ngAnimate', 'swipe']);
+var myApp = angular.module('myApp', ['ngRoute', 'ngTouch']);
 
 var URL = 'http://46.38.236.5:443';
 
 myApp.config(function ($routeProvider) {
     $routeProvider
         .when('/', {
-            templateUrl: 'content/home.html',
-            controller: 'homeController',
+            templateUrl: 'content/welcome.html',
+            controller: 'welcomeController',
         })
         .when('/interests', {
             templateUrl: 'content/interests.html',
@@ -27,6 +27,10 @@ myApp.config(function ($routeProvider) {
         .when('/food/feedback', {
             templateUrl: 'content/food-feedback.html',
             controller: 'foodFeedbackController',
+        })
+        .when('/home', {
+            templateUrl: 'content/home.html',
+            controller: 'homeController',
         })
         .when('/start', {
             templateUrl: 'content/start.html',
