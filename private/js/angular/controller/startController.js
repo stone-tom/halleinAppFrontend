@@ -6,11 +6,12 @@ myApp.controller('startController', function ($scope) {
    new Swiper ('.swiper-container-start-vertical', {
         // Optional parameters
         direction: 'vertical',
-       spaceBetween: -550
+
     })
     new Swiper ('.swiper-container-food-vertical', {
         // Optional parameters
         direction: 'vertical',
-        initialSlide: 2,
+        initialSlide: 1,
+
     })
 });
