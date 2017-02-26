@@ -1,4 +1,5 @@
 .settingsWrapper {
+  height: 100%;
  h2{
    font-size: 20px;
  }
@@ -12,6 +13,11 @@
 }
   .checkbox .finished{
 
+  }
+
+  .checkbox i{
+    position: absolute;
+margin-bottom: 0;
   }
 
     }

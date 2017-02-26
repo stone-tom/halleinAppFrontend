@@ -35,7 +35,7 @@ myApp.controller('restaurantDetailController', function ($scope, $routeParams, $
     }
 
     var today = new Date();
-    var weekday = today.getDay() - 1;
+    var weekday = today.getDay();
     getMenu();
     function getMenu() {
         var data = {
@@ -65,13 +65,13 @@ myApp.controller('restaurantDetailController', function ($scope, $routeParams, $
     $scope.dayslider = {
         current: weekday,
         days: [
+            'sonntag',
             'montag',
             'dienstag',
             'mittwoch',
             'donnerstag',
             'freitag',
-            'samstag',
-            'sonntag'
+            'samstag'
         ]
     }
     $scope.daysliderBack = function () {
