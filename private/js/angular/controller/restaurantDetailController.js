@@ -1,9 +1,6 @@
 myApp.controller('restaurantDetailController', function ($scope, $routeParams, $http, $timeout) {
     new Swiper ('.swiper-container-tabs', {
-        // Optional parameters
-        direction: 'horizontal',
-        pagination: '.swiper-pagination',
-        paginationType: 'progress'
+        direction: 'horizontal'
     })
 
     var restaurant = $routeParams.restaurant;
@@ -117,10 +114,10 @@ myApp.controller('restaurantDetailController', function ($scope, $routeParams, $
     $scope.tabswitcher = {
         active: 0,
         tabs: [
-            {icon: 'info_outline', template: 'restaurantDetail/general.html'},
-            {icon: 'restaurant', template: 'restaurantDetail/menus.html'},
-            {icon: 'map', template: 'restaurantDetail/location.html'},
-            {icon: 'star_border', template: 'restaurantDetail/feedback.html'},
+            {icon: 'info_outline', link: '#general'},
+            {icon: 'restaurant', link: '#menus'},
+            {icon: 'map', link: '#location'},
+            {icon: 'star_border', link: '#feedback'},
         ]
     };
 
