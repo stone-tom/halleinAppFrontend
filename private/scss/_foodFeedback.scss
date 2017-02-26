@@ -1,26 +1,24 @@
 .foodFeedbackWrapper {
   width: 100%;
   height: 100%;
-    .filter{
-      margin-top: 30px;
-      margin-left: 10%;
-      h1{
-        display: inline;
-        color: #fff;
-        text-transform: none;
-        vertical-align: middle ;
-      }
-      .filtericon{
-        display: inline;
-        vertical-align: middle;
-
-      }
+  background-image: url('../../assets/imgs/food_background_blur.jpg');
+  background-size: cover;
+  padding: 20px;
+  .filter {
+    h1 {
+      display: inline;
+      color: #fff;
+      text-transform: none;
+      vertical-align: middle;
     }
-
-}
-.bubbles{
-  height: calc(100vh - 50px - 40px - 20px);
-  overflow: auto;
+    .filtericon {
+      display: inline;
+      vertical-align: middle;
+    }
+  }
+  .bubbles {
+    height: calc(100vh - 50px - 40px - 20px);
+    overflow: scroll;
     .bubble {
 
       position: relative;
@@ -44,16 +42,16 @@
         color: #c86a55;
         width: calc(10% - 10px);
         text-align: right;
-        &.four{
+        &.four {
           color: #ee8360;
         }
-        &.three{
+        &.three {
           color: #ff9064;
         }
-        &.two{
+        &.two {
           color: #ffaa5a;
         }
-        &.one{
+        &.one {
           color: #ffb74a;
         }
       }
@@ -69,7 +67,7 @@
         left: -14px;
         top: 45px;
       }
-      &:nth-of-type(2n+2){
+      &:nth-of-type(2n+2) {
         &:after {
           border-width: 15px 0 15px 15px;
           left: auto;
@@ -77,4 +75,5 @@
         }
       }
     }
+  }
 }

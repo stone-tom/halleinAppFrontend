@@ -1,7 +1,7 @@
 <div class="foodFeedbackWrapper" ng-controller="foodFeedbackController">
-    <div class="filter" ng-click="feedbacksliderUp()">
+    <span class="filter" ng-click="feedbacksliderUp()">
     <h1 >{{feedbackSlider.option[feedbackSlider.current].name}}</h1> <img  src="assets/icons/up_down.png" class="filtericon">
-    </div>
+    </span>
     <div class="bubbles">
         <div class="bubble" ng-repeat="bubble in bubbles">
             <div class="restaurant">{{bubble.restaurant}}</div>
@@ -10,4 +10,3 @@
         </div>
     </div>
 </div>
-

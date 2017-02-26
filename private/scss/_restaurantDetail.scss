@@ -1,5 +1,4 @@
 .restaurantDetailWrapper {
-
   .slider {
 
     img {
@@ -58,11 +57,13 @@
         }
       }
     }
-
     .swiper-container-tabs {
       overflow: hidden;
       width: 100%;
       height: calc(100% - 62px);
+      background: #fff;
+      .swiper-slide{
+      }
     }
     .left, .right {
       display: inline-block;

@@ -1,5 +1,5 @@
 myApp.controller('restaurantDetailController', function ($scope, $routeParams, $http, $timeout) {
-    new Swiper ('.swiper-container-tabs', {
+    var swiperTabs = new Swiper ('.swiper-container-tabs', {
         direction: 'horizontal'
     })
 
@@ -111,7 +111,7 @@ myApp.controller('restaurantDetailController', function ($scope, $routeParams, $
 
     $timeout(countUp, 3000);
 
-    $scope.tabswitcher = {
+    $scope.tabSwitcher = {
         active: 0,
         tabs: [
             {icon: 'info_outline', link: '#general'},
@@ -126,6 +126,18 @@ myApp.controller('restaurantDetailController', function ($scope, $routeParams, $
         {icon: 'pets'},
         {icon: 'credit_card'}
     ]
+
+    $scope.tabGoTo = function(index){
+        swiperTabs.slideTo(index);
+        $scope.tabSwitcher.active = index;
+    }
+
+    swiperTabs.on('onSlideChangeStart', function () {
+        var currentSlide = swiperTabs.realIndex;
+        $scope.tabSwitcher.active = currentSlide;
+        $('.tab').removeClass('active');
+        $('.tab').eq(currentSlide).addClass('active');
+    });
 
     $scope.giveFeedback = function() {
         document.addEventListener("deviceready", onDeviceReady, false);

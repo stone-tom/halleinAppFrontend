@@ -1,26 +1,37 @@
 .settingsWrapper {
   height: 100%;
- h2{
-   font-size: 20px;
- }
+  background-image: url('../../assets/imgs/start_background_blur.jpg');
+  background-size: cover;
+
+  h2 {
+    font-size: 20px;
+  }
   padding: 20px;
 
   font-family: "Gotham Book";
 
-#editInterests{
-  text-align: center;
-  margin-left: 9px;
-}
-  .checkbox .finished{
+  #editInterests {
+    text-align: center;
+    margin-left: 9px;
+  }
+  .checkbox .finished {
 
   }
 
-  .checkbox i{
-    position: absolute;
-margin-bottom: 0;
-  }
-
+  .checkbox {
+    i {
+      position: absolute;
+      margin-bottom: 0;
     }
+    div:before {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    input:checked + div:before {
+      background-image: url('../../assets/icons/done_white.png');
+      background-size: cover;
+    }
+  }
+}
 
 
 
