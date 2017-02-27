@@ -3,24 +3,27 @@
   height: 100%;
   background-image: url('../../assets/imgs/food_background_blur.jpg');
   background-size: cover;
-  padding: 20px;
+  padding: 40px 20px 20px 20px;
   .filter {
     h1 {
       display: inline;
+      font-size: 35px;
       color: #fff;
       text-transform: none;
       vertical-align: middle;
     }
-    .filtericon {
+    img {
       display: inline;
+      width: 30px;
+      margin-left: 5px;
       vertical-align: middle;
     }
   }
   .bubbles {
-    height: calc(100vh - 50px - 40px - 20px);
+    height: calc(100vh - 50px - 40px);
+    margin-top: 10px;
     overflow: scroll;
     .bubble {
-
       position: relative;
       background-color: #fff;
       width: calc(80% - 40px);

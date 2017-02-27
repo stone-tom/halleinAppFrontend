@@ -34,3 +34,8 @@ document.addEventListener("deviceready", function() {
     window.plugins.nativepagetransitions.globalOptions.fixedPixelsTop = 0;
     window.plugins.nativepagetransitions.globalOptions.fixedPixelsBottom = 0;
 }, false);
+
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+    StatusBar.backgroundColorByHexString("#c85560");
+}

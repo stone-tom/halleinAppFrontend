@@ -1,4 +1,7 @@
 myApp.controller('foodFeedbackController', function ($scope, $http) {
+    $('.bubbles').on('touchstart', function(e){
+        e.stopPropagation();
+    });
 
     getFeedback('-created');
 
