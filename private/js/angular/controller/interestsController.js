@@ -1,11 +1,6 @@
 myApp.controller('interestsController', function ($scope) {
     $scope.interests = [
-        {name: 'News', color:'blue', active: true},
-        {name: 'Vegetarisches Kost', color:'orange'},
-	]
+        {name: 'News', type: 'general', active: true},
+        {name: 'Vegetarisches Kost', type: 'food'},
+    ]
 });
-
-
-
-
-

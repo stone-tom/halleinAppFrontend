@@ -8,6 +8,7 @@
       border-radius: 50px;
       margin-left: 3px;
       margin-top: 3px;
+      opacity: .5;
       span {
         display: inline-block;
         font-size: 13px;
@@ -17,6 +18,9 @@
       i {
         font-size: 13px;
         color: #fff;
+      }
+      &.active{
+        opacity: 1;
       }
     }
   }
