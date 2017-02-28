@@ -1,4 +1,4 @@
-myApp.controller('interestsController', function ($scope) {
+myApp.controller('interestsController', function ($scope, $cordovaPreferences) {
     $scope.interests = [
         {name: 'News', active: true},
         {name: 'Vegetarisches', type: 'food'},
@@ -8,4 +8,8 @@ myApp.controller('interestsController', function ($scope) {
         {name: 'Pommes', type: 'food'},
         {name: 'Suppen', type: 'food'}
     ]
+
+    $scope.save = function () {
+        $cordovaPreferences.store('interests', $scope.interests);
+    }
 });

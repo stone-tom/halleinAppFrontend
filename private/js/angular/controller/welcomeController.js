@@ -1,2 +1,2 @@
-myApp.controller('welcomeController', function ($scope, $http) {
+myApp.controller('welcomeController', function ($scope) {
 });

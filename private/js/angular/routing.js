@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngCordova', 'ngRoute', 'ngTouch']);
+var myApp = angular.module('myApp', ['ngRoute', 'ngCordova', 'ngTouch']);
 
 var URL = 'http://46.38.236.5:443';
 
@@ -42,11 +42,7 @@ myApp.config(function ($routeProvider) {
         })
         .when('/establishment', {
             templateUrl: 'content/establishment.html',
-            controller: 'establishmentController',
-            nativeTransitions: {
-                "type": "flip",
-                "direction": "up"
-            }
+            controller: 'establishmentController'
         })
         .when('/settings', {
             templateUrl: 'content/settings.html',

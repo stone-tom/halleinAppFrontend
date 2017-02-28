@@ -1,4 +1,4 @@
-myApp.controller('newsletterController', function ($scope) {
+myApp.controller('newsletterController', function ($scope, $cordovaPreferences) {
     $scope.input = {};
     var permissions = cordova.plugins.permissions;
     permissions.hasPermission(permissions.GET_ACCOUNTS, checkPermissionCallback, null);
@@ -22,5 +22,10 @@ myApp.controller('newsletterController', function ($scope) {
             permissions.GET_ACCOUNTS,
             checkPermissionCallback,
             null);
+    }
+
+    $scope.save = function () {
+        $cordovaPreferences.store('newsletter', $scope.input.email);
+        $cordovaPreferences.store('setupDone', true);
     }
 });

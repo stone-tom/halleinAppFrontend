@@ -4,13 +4,13 @@
     <div class="block">
         <h2>Allgemein:</h2>
         <label class="checkbox">
-            <input type="checkbox" ng-checked="input.pupil">
+            <input type="checkbox" ng-model="input.general.pupil">
             <div></div>
             <span>Ich bin Schüler</span>
         </label>
         <br>
         <label class="checkbox">
-            <input type="checkbox" ng-checked="input.tourist">
+            <input type="checkbox" ng-model="input.general.tourist">
             <div></div>
             <span>Ich bin Tourist</span>
         </label>
@@ -26,13 +26,13 @@
     <div class="block">
         <h2>Benachrichtigungen:</h2>
         <label class="switch transparent">
-            <input type="checkbox" ng-checked="input.newsletter">
+            <input type="checkbox" ng-model="input.newsletter.email">
             <div class="slider round"></div>
         </label>
         <span class="switchLabel">Newsletter aus</span>
         <br/>
         <label class="switch transparent">
-            <input type="checkbox" ng-checked="input.notifications">
+            <input type="checkbox" ng-model="input.notifications">
             <div class="slider round"></div>
         </label>
         <span class="switchLabel">Push-Benachrichtigungen ein</span>

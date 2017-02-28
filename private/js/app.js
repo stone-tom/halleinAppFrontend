@@ -57,8 +57,3 @@ document.addEventListener("deviceready", function() {
         StatusBar.show();
     }
 }, false);
-
-// ngCordova-Plugins
-document.addEventListener("deviceready", function () {
-    $cordovaPreferencesSource.someFunction().then(success, error);
-}, false);
