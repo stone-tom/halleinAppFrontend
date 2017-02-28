@@ -3,8 +3,9 @@
   height: 100%;
   background-image: url('../../assets/imgs/food_background_blur.jpg');
   background-size: cover;
-  padding: 40px 20px 20px 20px;
+  padding-top: 40px;
   .filter {
+    margin-left: 30px;
     h1 {
       display: inline;
       font-size: 35px;
@@ -22,6 +23,7 @@
   .bubbles {
     height: calc(100vh - 50px - 40px);
     margin-top: 10px;
+    padding: 0 20px;
     overflow: scroll;
     .bubble {
       position: relative;
@@ -31,11 +33,47 @@
       margin-bottom: 20px;
       margin-left: 10%;
       padding: 10px;
-
+      border-radius: 10px;
+      transform: translateX(-30px);
+      animation: bubble-left .5s ease forwards;
+      &:nth-of-type(2n+2){
+        animation-name: bubble-right;
+        transform: translateX(30px);
+      }
+      &:nth-of-type(2){
+        animation-delay: .05s;
+      }
+      &:nth-of-type(3){
+        animation-delay: .1s;
+      }
+      &:nth-of-type(4){
+        animation-delay: .15s;
+      }
+      @keyframes bubble-left {
+        0%{
+          transform: translateX(-30px);
+        }
+        50%{
+          transform: scale(.9);
+        }
+        100%{
+          transform: translateX(0);
+        }
+      }
+      @keyframes bubble-right {
+        0%{
+          transform: translateX(30px);
+        }
+        50%{
+          transform: scale(.9);
+        }
+        100%{
+          transform: translateX(0);
+        }
+      }
       .text, .rating {
         display: inline-block;
         vertical-align: middle;
-
       }
       .text {
         width: 90%;

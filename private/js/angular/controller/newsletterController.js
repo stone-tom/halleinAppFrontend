@@ -4,11 +4,11 @@ myApp.controller('newsletterController', function ($scope) {
     permissions.hasPermission(permissions.GET_ACCOUNTS, checkPermissionCallback, null);
 
     function checkPermissionCallback(status) {
-        alert(alert(JSON.stringify(status, null, 4)));
+        //alert(alert(JSON.stringify(status, null, 4)));
         if(status.hasPermission) {
             window.plugins.DeviceAccounts.getEmail(function (email) {
                 // accounts is an array with objects containing name and type attributes
-                alert(email);
+                //alert(email);
                 $scope.input.email = email;
             });
         }

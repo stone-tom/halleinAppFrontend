@@ -1,3 +1,12 @@
+function timeStringToDate(date) {
+    var hours = date.substr(0, 2);
+    var minutes = date.substr(3, 2);
+    var seconds = date.substr(6);
+    date = new Date();
+    date.setHours(hours, minutes, seconds);
+    return date;
+}
+
 function dateToString(date) {
     var year = date.getFullYear();
     var month = date.getMonth() + 1;
@@ -47,4 +56,9 @@ document.addEventListener("deviceready", function() {
         // Get the bar back
         StatusBar.show();
     }
+}, false);
+
+// ngCordova-Plugins
+document.addEventListener("deviceready", function () {
+    $cordovaPreferencesSource.someFunction().then(success, error);
 }, false);

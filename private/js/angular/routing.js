@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute', 'ngTouch']);
+var myApp = angular.module('myApp', ['ngCordova', 'ngRoute', 'ngTouch']);
 
 var URL = 'http://46.38.236.5:443';
 

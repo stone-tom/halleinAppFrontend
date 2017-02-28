@@ -16,59 +16,49 @@
         <div class="swiper-container-tabs">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <div class="general">
-                        <p>{{data.description}}</p>
-                        <div class="left">
-                            <div class="icons">
-                                <i class="material-icons" ng-repeat="option in options">{{option.icon}}</i>
-                            </div>
-                        </div>
-                        <div class="right border">
-                            <div ng-if="data.tel"><i class="material-icons">phone</i><a href="tel:{{data.tel}}">{{data.tel}}</a></div>
-                            <div ng-if="data.website"><i class="material-icons">public</i><a ng-href="{{data.website}}">{{data.websiteFormatted}}</a></div>
-                            <div><i class="material-icons">access_time</i>{{data.openingTimes}}</div>
-                        </div>
-                    </div>
+                    <div ng-include="'content/restaurantDetails/general.html'"></div>
                 </div>
                 <div class="swiper-slide">
                     <div class="menus">
                         <div class="meals">
                             <ng-if ng-if="menu">
                                 <h1 ng-if="menu.appetizer">Vorspeise</h1>
-                                <p>{{menu.mainCourse.appetizer}}</p>
+                                <p>{{menu.appetizer.description}}</p>
                                 <h1 ng-if="menu.mainCourse">Hauptspeise</h1>
                                 <p>{{menu.mainCourse.description}}</p>
                                 <h1 ng-if="menu.dessert">Nachspeise</h1>
-                                <p>{{menu.mainCourse.dessert}}</p>
+                                <p>{{menu.dessert.description}}</p>
                             </ng-if>
                             <ng-if ng-if="!menu">
 
-                                <h1>Kein Menü eingetragen</h1>
+                                <h1>Kein Menü</h1>
                                 <div class="notification">
-                                    <span>Bei Eintrag benachrichtigen:</span>
                                     <label class="switch">
-                                        <input type="checkbox" ng-true-value="1" ng-false-value="0">
+                                        <input type="checkbox" ng-checked="input.newsletter">
                                         <div class="slider round"></div>
                                     </label>
+                                    <span class="switchLabel">Bei Eintrag benachrichtigen</span>
                                 </div>
                             </ng-if>
                         </div>
                         <div class="notification">
-                            <span>Wöchentlich benachrichtigen:</span>
                             <label class="switch">
-                                <input type="checkbox" ng-true-value="1" ng-false-value="0">
+                                <input type="checkbox" ng-checked="input.newsletter">
                                 <div class="slider round"></div>
                             </label>
+                            <span class="switchLabel">Jede Woche benachrichtigen</span>
                         </div>
 
                         <div class="days">
+                            <div class="action prev" ng-click="prevDay()"><i class="material-icons">keyboard_arrow_left</i></div>
+                            <div class="action next" ng-click="nextDay()"><i class="material-icons">keyboard_arrow_right</i></div>
                             <div class="swiper-container-menus">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide day">Sonntag</div>
                                     <div class="swiper-slide day">Montag</div>
                                     <div class="swiper-slide day">Dienstag</div>
                                     <div class="swiper-slide day">Mittwoch</div>
-                                    <div class="swiper-slide day">Donnerstrag</div>
+                                    <div class="swiper-slide day">Donnerstag</div>
                                     <div class="swiper-slide day">Freitag</div>
                                     <div class="swiper-slide day">Samstag</div>
                                 </div>
@@ -77,34 +67,10 @@
                     </div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="location">
-                        <div class="Adresse">
-                            <h1>Adresse</h1>
-
-                            <div class="Straße">
-                                <h1>{{data.street}} {{data.houseNumber}}, {{data.countryCode}} {{data.country}}</h1>
-                            </div>
-                            <div class="maps">
-                                <a href="http://maps.google.com/maps?q={{data.street}}+{{data.houseNumber}}+{{data.countryCode}}+{{data.country}}" class="button">ÖFFNE GOOGLE MAPS</a>
-                            </div>
-
-                        </div>
-                    </div>
+                    <div ng-include="'content/restaurantDetails/location.html'"></div>
                 </div>
                 <div class="swiper-slide">
-
-                    <div class="feedback">
-
-                    <div class="bubbles">
-                        <div class="bubble" ng-class="{four: bubble.rating == 4, three: bubble.rating == 3, two: bubble.rating == 2, one: bubble.rating == 1}" ng-repeat="bubble in bubbles">
-                            <div class="restaurant">{{bubble.restaurant}}</div>
-                            <div class="text">{{bubble.text}}</div>
-                            <div class="rating">{{bubble.rating}}</div>
-                        </div>
-                    </div>
-
-                    <button class="givefeedback" ng-click="giveFeedback()"><span>FEEDBACK GEBEN</span> <i class="material-icons">add</i></button>
-</div>
+                    <div ng-include="'content/restaurantDetails/feedback.html'"></div>
                 </div>
             </div>
             <div class="swiper-pagination"></div>
