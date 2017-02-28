@@ -21,7 +21,7 @@
     <!-- JS -->
     <script src="public/js/app.js"></script>
 </head>
-<body ng-app="myApp" ng-controller="mainController">
+<body ng-app="myApp" ng-controller="mainController" ng-class="{'has-translucent-status-bar': window.screen.height === window.innerHeight}">
 <div class="view" ng-view></div>
 </body>
 </html>

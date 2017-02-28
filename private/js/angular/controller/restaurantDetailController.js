@@ -2,6 +2,13 @@ myApp.controller('restaurantDetailController', function ($scope, $routeParams, $
     var swiperTabs = new Swiper ('.swiper-container-tabs', {
         direction: 'horizontal'
     })
+    var today = new Date();
+    var weekday = today.getDay();
+    var swiperMenus = new Swiper ('.swiper-container-menus', {
+        direction: 'horizontal',
+        loop: true,
+        initialSlide: weekday
+    })
 
     var restaurant = $routeParams.restaurant;
     $http.get(URL + '/restaurants?id=' + restaurant)
@@ -34,8 +41,6 @@ myApp.controller('restaurantDetailController', function ($scope, $routeParams, $
             })
     }
 
-    var today = new Date();
-    var weekday = today.getDay();
     getMenu();
     function getMenu() {
         var data = {
@@ -62,7 +67,7 @@ myApp.controller('restaurantDetailController', function ($scope, $routeParams, $
             {path: 'assets/imgs/local3.jpg'}
         ]
     }
-    $scope.dayslider = {
+    $scope.daySlider = {
         current: weekday,
         days: [
             'sonntag',
@@ -73,30 +78,6 @@ myApp.controller('restaurantDetailController', function ($scope, $routeParams, $
             'freitag',
             'samstag'
         ]
-    }
-    $scope.daysliderBack = function () {
-        if ($scope.dayslider.current == 0) {
-            $scope.dayslider.current = $scope.dayslider.days.length - 1;
-            today.setDate(today.getDate() + 6);
-        }
-        else {
-            $scope.dayslider.current--
-            today.setDate(today.getDate() - 1);
-        }
-        console.log(today);
-        getMenu();
-    }
-    $scope.daysliderForward = function () {
-        if ($scope.dayslider.current == $scope.dayslider.days.length - 1) {
-            $scope.dayslider.current = 0;
-            today.setDate(today.getDate() - 6);
-        }
-        else {
-            $scope.dayslider.current++;
-            today.setDate(today.getDate() + 1);
-        }
-        console.log(today);
-        getMenu();
     }
 
     var countUp = function () {

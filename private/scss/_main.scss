@@ -24,6 +24,10 @@ body{
   margin: 0;
 }
 
+.container{
+  padding-top: 20px;
+}
+
 // Switch animations
 .slide {
   position: absolute;
@@ -90,4 +94,10 @@ body{
   &.left{
     left: -100%;
   }
+}
+
+
+
+.platform-android.has-translucent-status-bar .app-header-bar  {
+  padding-top: 25px;
 }

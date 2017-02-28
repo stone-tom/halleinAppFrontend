@@ -1,26 +1,26 @@
 myApp.controller('newsletterController', function ($scope) {
+    $scope.input = {};
     var permissions = cordova.plugins.permissions;
     permissions.hasPermission(permissions.GET_ACCOUNTS, checkPermissionCallback, null);
 
     function checkPermissionCallback(status) {
-        if(!status.hasPermission) {
-            var errorCallback = function() {
-                console.warn('Camera permission is not turned on');
-            }
-
-            permissions.requestPermission(
-                permissions.GET_ACCOUNTS,
-                function(status) {
-                    if(!status.hasPermission) errorCallback();
-                },
-                errorCallback);
+        alert(alert(JSON.stringify(status, null, 4)));
+        if(status.hasPermission) {
+            window.plugins.DeviceAccounts.getEmail(function (email) {
+                // accounts is an array with objects containing name and type attributes
+                alert(email);
+                $scope.input.email = email;
+            });
+        }
+        else {
+           getPermission();
         }
     }
 
-    $scope.input = {};
-
-    window.plugins.DeviceAccounts.getEmail(function(email){
-        // accounts is an array with objects containing name and type attributes
-        $scope.input.email = email;
-    });
+    function getPermission() {
+        permissions.requestPermission(
+            permissions.GET_ACCOUNTS,
+            checkPermissionCallback,
+            null);
+    }
 });
