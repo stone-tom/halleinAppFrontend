@@ -1,22 +1,41 @@
 myApp.controller('restaurantDetailController', function ($scope, $routeParams, $http, $timeout) {
-    var swiperTabs = new Swiper ('.swiper-container-tabs', {
+    var swiperTabs = new Swiper('.swiper-container-tabs', {
         direction: 'horizontal'
     })
+    var today = new Date();
+    var weekday = today.getDay();
+    var swiperMenus = new Swiper('.swiper-container-menus', {
+        direction: 'horizontal',
+        initialSlide: weekday,
+        speed: 100,
+        loop: true,
+        slidesPerView: 2,
+        centeredSlides: true,
+        slideToClickedSlide: true
+    })
+
+    $scope.prevDay = function () {
+        swiperMenus.slidePrev();
+    }
+
+    $scope.nextDay = function () {
+        swiperMenus.slideNext();
+    }
 
     var restaurant = $routeParams.restaurant;
     $http.get(URL + '/restaurants?id=' + restaurant)
         .then(function (response) {
             $scope.data = response.data[0];
             $scope.data.websiteFormatted = $scope.data.website;
-           if ($scope.data.websiteFormatted.startsWith('http://')) {
-               $scope.data.websiteFormatted = $scope.data.websiteFormatted.substring(7)
+            if ($scope.data.websiteFormatted.startsWith('http://')) {
+                $scope.data.websiteFormatted = $scope.data.websiteFormatted.substring(7)
 
-           }
-           else if( $scope.data.websiteFormatted.startsWith('https://')) {
-               $scope.data.websiteFormatted = $scope.data.websiteFormatted.substring(8)
-           }
+            }
+            else if ($scope.data.websiteFormatted.startsWith('https://')) {
+                $scope.data.websiteFormatted = $scope.data.websiteFormatted.substring(8)
+            }
             if ($scope.data.websiteFormatted.endsWith('/')) {
-                $scope.data.websiteFormatted = $scope.data.websiteFormatted.substring(0, $scope.data.websiteFormatted.length-1 )
+                $scope.data.websiteFormatted = $scope.data.websiteFormatted.substring(0, $scope.data.websiteFormatted.length - 1)
 
             }
             if ($scope.data.websiteFormatted.length > 14) {
@@ -34,13 +53,13 @@ myApp.controller('restaurantDetailController', function ($scope, $routeParams, $
             })
     }
 
-    var today = new Date();
-    var weekday = today.getDay();
     getMenu();
-    function getMenu() {
+    function getMenu(date) {
+        var day = date;
+        if (!date) day = today;
         var data = {
             restaurant: restaurant,
-            date: dateToString(today)
+            date: dateToString(day)
         }
         $http({
             url: URL + '/menus',
@@ -48,7 +67,7 @@ myApp.controller('restaurantDetailController', function ($scope, $routeParams, $
             params: data
         }).then(function (response) {
             $scope.menu = response.data[0];
-        }, function() {
+        }, function () {
             delete $scope.menu;
         });
     }
@@ -62,42 +81,14 @@ myApp.controller('restaurantDetailController', function ($scope, $routeParams, $
             {path: 'assets/imgs/local3.jpg'}
         ]
     }
-    $scope.dayslider = {
-        current: weekday,
-        days: [
-            'sonntag',
-            'montag',
-            'dienstag',
-            'mittwoch',
-            'donnerstag',
-            'freitag',
-            'samstag'
-        ]
-    }
-    $scope.daysliderBack = function () {
-        if ($scope.dayslider.current == 0) {
-            $scope.dayslider.current = $scope.dayslider.days.length - 1;
-            today.setDate(today.getDate() + 6);
-        }
-        else {
-            $scope.dayslider.current--
-            today.setDate(today.getDate() - 1);
-        }
-        console.log(today);
-        getMenu();
-    }
-    $scope.daysliderForward = function () {
-        if ($scope.dayslider.current == $scope.dayslider.days.length - 1) {
-            $scope.dayslider.current = 0;
-            today.setDate(today.getDate() - 6);
-        }
-        else {
-            $scope.dayslider.current++;
-            today.setDate(today.getDate() + 1);
-        }
-        console.log(today);
-        getMenu();
-    }
+
+    swiperMenus.on('onSlideChangeStart', function () {
+        var currentSlide = swiperMenus.realIndex - weekday;
+        var date = new Date();
+        date.setDate(date.getDate() + currentSlide);
+        getMenu(date);
+    });
+
 
     var countUp = function () {
         if ($scope.slider.current == $scope.slider.images.length - 1) {
@@ -127,7 +118,49 @@ myApp.controller('restaurantDetailController', function ($scope, $routeParams, $
         {icon: 'credit_card'}
     ]
 
-    $scope.tabGoTo = function(index){
+        $http.get(URL + '/openingTimes?get=opens,closesHalf,opensHalf,closes&weekday=' + weekday + '&restaurant=' + restaurant)
+            .then(function (response) {
+                var times = response.data[0];
+                $scope.openingTimes = {
+                    times: {
+                        opens: timeStringToDate(times.opens),
+                        closesHalf: timeStringToDate(times.closesHalf),
+                        opensHalf: timeStringToDate(times.opensHalf),
+                        closes: timeStringToDate(times.closes)
+                    }
+                };
+                analyzeOpeningTimes($scope.openingTimes);
+            })
+
+    function analyzeOpeningTimes(openingTimes) {
+        var now = new Date();
+        if (openingTimes.times.opens - now > 0 && (openingTimes.times.opens - now) / 60000 <= 60) {
+            $scope.openingTimes.status = 'opensSoon';
+            $scope.openingTimes.text = 'Öffnet bald';
+        }
+        else if (openingTimes.times.closesHalf - now > 0 && (openingTimes.times.closesHalf - now) / 60000 <= 60) {
+            $scope.openingTimes.status = 'closesSoon';
+            $scope.openingTimes.text = 'Schließt bald';
+        }
+        else if (openingTimes.times.opensHalf - now > 0 && (openingTimes.times.opensHalf - now) / 60000 <= 60) {
+            $scope.openingTimes.status = 'opensSoon';
+            $scope.openingTimes.text = 'Öffnet bald';
+        }
+        else if (openingTimes.times.closes - now > 0 && (openingTimes.times.closes - now) / 60000 <= 60) {
+            $scope.openingTimes.status = 'closesSoon';
+            $scope.openingTimes.text = 'Schließt bald';
+        }
+        else if (openingTimes.times.opens < now && openingTimes.times.closesHalf > now || openingTimes.times.opensHalf < now && openingTimes.times.closes > now) {
+            $scope.openingTimes.status = 'opened';
+            $scope.openingTimes.text = 'Gerade geöffnet';
+        }
+        else {
+            $scope.openingTimes.status = 'closed';
+            $scope.openingTimes.text = 'Geschlossen';
+        }
+    }
+
+    $scope.tabGoTo = function (index) {
         swiperTabs.slideTo(index);
         $scope.tabSwitcher.active = index;
     }
@@ -139,18 +172,19 @@ myApp.controller('restaurantDetailController', function ($scope, $routeParams, $
         $('.tab').eq(currentSlide).addClass('active');
     });
 
-    $scope.giveFeedback = function() {
+    $scope.giveFeedback = function () {
         document.addEventListener("deviceready", onDeviceReady, false);
         function onDeviceReady() {
             navigator.notification.prompt(
                 '',  // message
                 onPrompt,                  // callback to invoke
                 'Feedback geben',            // title
-                ['Senden','Abbrechen'],             // buttonLabels
+                ['Senden', 'Abbrechen'],             // buttonLabels
                 ''                 // defaultText
             );
         }
-        function onPrompt(results){
+
+        function onPrompt(results) {
             var text = results.input1;
             var data = {
                 restaurant: 2,

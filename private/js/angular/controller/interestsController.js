@@ -1,11 +1,15 @@
-myApp.controller('interestsController', function ($scope) {
+myApp.controller('interestsController', function ($scope, $cordovaPreferences) {
     $scope.interests = [
-        {name: 'News', color:'blue', active: true},
-        {name: 'Vegetarisches Kost', color:'orange'},
-	]
+        {name: 'News', active: true},
+        {name: 'Vegetarisches', type: 'food'},
+        {name: 'Pizza', type: 'food'},
+        {name: 'Burger', type: 'food'},
+        {name: 'Salate', type: 'food'},
+        {name: 'Pommes', type: 'food'},
+        {name: 'Suppen', type: 'food'}
+    ]
+
+    $scope.save = function () {
+        $cordovaPreferences.store('interests', $scope.interests);
+    }
 });
-
-
-
-
-

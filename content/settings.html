@@ -1,41 +1,42 @@
-    <div class="settingsWrapper">
-
+<div class="settingsWrapper" ng-controller="settingsController">
     <h1>Einstellungen</h1>
 
-    <h2>Allgemein:</h2>
-    <label class="checkbox">
-        <input type="checkbox" value="pupilMeal">
-        <div></div>
-        <span>Ich bin Schüler</span>
-    </label>
-<br>
-    <br>
-    <label class="checkbox">
-        <input type="checkbox" value="pupilMeal">
-        <div></div>
-        <span>Ich bin Tourist</span>
-    </label>
+    <div class="block">
+        <h2>Allgemein:</h2>
+        <label class="checkbox">
+            <input type="checkbox" ng-model="input.general.pupil">
+            <div></div>
+            <span>Ich bin Schüler</span>
+        </label>
+        <br>
+        <label class="checkbox">
+            <input type="checkbox" ng-model="input.general.tourist">
+            <div></div>
+            <span>Ich bin Tourist</span>
+        </label>
+    </div>
+    <div class="block">
+        <h2>Interessen:</h2>
+        <div class="interests">
+            <div class="interest" ng-class="[{active: interest.active}, interest.type]" ng-repeat="interest in input.interests" ng-click="interest.active = !interest.active">
+                <span>{{interest.name}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="block">
+        <h2>Benachrichtigungen:</h2>
+        <label class="switch transparent">
+            <input type="checkbox" ng-model="input.newsletter.email">
+            <div class="slider round"></div>
+        </label>
+        <span class="switchLabel">Newsletter aus</span>
+        <br/>
+        <label class="switch transparent">
+            <input type="checkbox" ng-model="input.notifications">
+            <div class="slider round"></div>
+        </label>
+        <span class="switchLabel">Push-Benachrichtigungen ein</span>
+    </div>
 
-
-    <h2>Interessen:</h2>
-<i class="material-icons">mode_edit</i><span id="editInterests">Interessen bearbeiten</span>
-    <h2>Newsletter:</h2>
-
-    <label class="checkbox">
-        <input type="checkbox" value="pupilMeal">
-        <div></div>
-        <span>Newsletter ein/aus</span>
-    </label>
-
-
-
-    <h2>Benachrichtigungen:</h2>
-
-
-    <label class="checkbox">
-        <input type="checkbox" value="pupilMeal">
-        <div></div>
-        <span>Benachrichtigungen ein/aus</span>
-    </label>
-    <a href="#start"><i class="material-icons doneicon">done</i></a>
+    <i class="material-icons doneicon" ng-click="save()">done</i>
 </div>

@@ -1,3 +1,12 @@
+function timeStringToDate(date) {
+    var hours = date.substr(0, 2);
+    var minutes = date.substr(3, 2);
+    var seconds = date.substr(6);
+    date = new Date();
+    date.setHours(hours, minutes, seconds);
+    return date;
+}
+
 function dateToString(date) {
     var year = date.getFullYear();
     var month = date.getMonth() + 1;
@@ -33,9 +42,18 @@ document.addEventListener("deviceready", function() {
     // these are used for slide left/right only currently
     window.plugins.nativepagetransitions.globalOptions.fixedPixelsTop = 0;
     window.plugins.nativepagetransitions.globalOptions.fixedPixelsBottom = 0;
-}, false);
 
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
-    StatusBar.backgroundColorByHexString("#c85560");
-}
+    // Should work on Andriod
+    if(StatusBar && statusbarTransparent) {
+        // Enable translucent statusbar
+        statusbarTransparent.enable();
+
+        // Get the bar back
+        StatusBar.show();
+    }
+    // iOS only
+    else if (StatusBar) {
+        // Get the bar back
+        StatusBar.show();
+    }
+}, false);

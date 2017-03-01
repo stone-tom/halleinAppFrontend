@@ -21,7 +21,7 @@
       font-family: "Gotham Book";
       text-transform: none;
       z-index: 2;
-      font-size:30px
+      font-size: 30px
     }
   }
   .content {
@@ -62,14 +62,15 @@
       width: 100%;
       height: calc(100% - 62px);
       background: #fff;
-      .swiper-slide{
-      }
     }
     .left, .right {
       display: inline-block;
       width: calc(50% - 40px);
       vertical-align: top;
       padding: 5px;
+      span, a, i{
+        vertical-align: middle;
+      }
       &.border {
         border-left: 1px solid #ee8360;
         padding-left: 20px;
@@ -79,6 +80,22 @@
       a {
         color: #000;
         text-decoration: none;
+      }
+      .openingTimes {
+        &.opened {
+          color: #27ae60;
+        }
+        &.closed {
+          color: #c0392b;
+        }
+        &.opensSoon, &.closesSoon {
+          color: #f39c12;
+        }
+        .times{
+          position: absolute;
+          margin-left: 34px;
+          line-height: 25px;
+        }
       }
     }
     .location {
@@ -98,21 +115,19 @@
         padding: 0;
         margin-top: 15px;
       }
-      .maps .button {
+      .maps {
         position: absolute;
-        bottom: 0;
-        width: 100%;
-        left: 0;
-        border: none;
-        background-image: url('../../assets/imgs/maps.PNG');
-        background-repeat: no-repeat;
-        background-size: cover;
-        text-align: center;
+        background-color: rgba(0, 0, 0, 0.1);
         height: 60px;
         line-height: 60px;
-        text-decoration: none;
-        color: black;
-
+        width: 100%;
+        bottom: 0;
+        text-align: center;
+        text-transform: uppercase;
+        a {
+          color: #000;
+          text-decoration: none;
+        }
       }
     }
     .left {
@@ -199,10 +214,9 @@
 }
 
 .menus {
-
   .meals {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 30px;
     h1 {
       text-transform: uppercase;
       color: #000;
@@ -229,52 +243,64 @@
     }
 
   }
-  .day {
+  .days {
     position: absolute;
-    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.1);
     width: 100%;
-    left: 0;
-    border: none;
+    bottom: 0;
+    .action {
+      position: absolute;
+      width: 10%;
+      bottom: 0;
+      height: 60px;
+      line-height: 60px;
+      text-align: center;
+      &.next {
+        right: 0;
+      }
+      i {
+        vertical-align: middle;
+      }
+    }
+    .swiper-container-menus {
+      background: transparent; //???? Wieso
+      position: relative;
+      width: 80%;
+      left: 10%;
+      .swiper-slide {
+        font-size: 14px;
+        opacity: .3;
+        &.swiper-slide-active {
+          font-size: 16px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .day {
     text-align: center;
-
-    color: black;
     vertical-align: middle;
     text-transform: uppercase;
-    background-color: rgba(0, 0, 0, 0.1);
     height: 60px;
     line-height: 60px;
     i {
       vertical-align: middle;
     }
-
   }
-
 }
 
-.givefeedback {
+.actionbar {
   position: absolute;
-  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  font-size: 16px;
   width: 100%;
-  left: 0;
-  font-size: 18px;
-  //border-top-color: #ee8360;
-  background-color: #E0E0E0;
-  border: none;
-  text-align: center;
-  text-decoration: none;
-  color: black;
-  //background: rgba(0, 0, 0, 0.1);
-
   height: 60px;
   line-height: 60px;
-  position: fixed;
+  bottom: 0;
+  text-align: center;
+  text-transform: uppercase;
+  a {
+    color: #000;
+    text-decoration: none;
+  }
 }
-
-span, i {
-  vertical-align: middle;
-}
-
-
-
-
-

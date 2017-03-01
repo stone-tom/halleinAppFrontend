@@ -1,15 +1,13 @@
 myApp.controller('homeController', function ($scope) {
     var swiperStartHorizontal = new Swiper ('.swiper-container-start-horizontal', {
         direction: 'horizontal',
-        allowSwipeToPrev: true
     })
     var swiperStartVertical = new Swiper ('.swiper-container-start-vertical', {
         direction: 'vertical'
     })
     var swiperFoodVertical = new Swiper ('.swiper-container-food-vertical', {
         direction: 'vertical',
-        initialSlide: 1,
-        touchReleaseOnEdges: true
+        initialSlide: 1
     })
     swiperStartHorizontal.on('slideChangeStart', function () {
         var currentSlide = swiperStartHorizontal.realIndex;
