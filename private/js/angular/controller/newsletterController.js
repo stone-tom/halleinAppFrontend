@@ -10,6 +10,7 @@ myApp.controller('newsletterController', function ($scope, $cordovaPreferences) 
                 // accounts is an array with objects containing name and type attributes
                 //alert(email);
                 $scope.input.email = email;
+                $scope.$apply();
             });
         }
         else {
