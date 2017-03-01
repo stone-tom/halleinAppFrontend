@@ -34,11 +34,11 @@
       margin-left: 10%;
       padding: 10px;
       border-radius: 10px;
-      transform: translateX(-30px);
-      animation: bubble-left .5s ease forwards;
+      transform: translateX(-30px) rotate(5deg);
+      animation: bubble-left 1s ease forwards;
       &:nth-of-type(2n+2){
         animation-name: bubble-right;
-        transform: translateX(30px);
+        transform: translateX(30px) rotate(-5deg);
       }
       &:nth-of-type(2){
         animation-delay: .05s;
@@ -51,24 +51,24 @@
       }
       @keyframes bubble-left {
         0%{
-          transform: translateX(-30px);
+          transform: translateX(-30px) rotate(5deg);
         }
         50%{
           transform: scale(.9);
         }
         100%{
-          transform: translateX(0);
+          transform: translateX(0) rotate(0);
         }
       }
       @keyframes bubble-right {
         0%{
-          transform: translateX(30px);
+          transform: translateX(30px) rotate(-5deg);
         }
         50%{
           transform: scale(.9);
         }
         100%{
-          transform: translateX(0);
+          transform: translateX(0) rotate(0);
         }
       }
       .text, .rating {

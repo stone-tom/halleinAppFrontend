@@ -18,10 +18,11 @@
   }
 }
 .arrowTop, .arrowRight, .arrowBottom, .arrowLeft{
-  animation: fadeOut 8s 2s infinite;
+  //animation: fadeOut 8s 2s infinite;
 }
 .arrowTop {
-  left: calc(50% - 80px);
+  width: 100%;
+  text-align: center;
   i{
     font-size: 20px;
     color: #fff;
@@ -54,8 +55,9 @@
 }
 .arrowBottom {
   position: absolute;
+  width: 100%;
   bottom: 0;
-  left: calc(50% - 80px);
+  text-align: center;
   i{
     font-size: 20px;
     color: #fff;

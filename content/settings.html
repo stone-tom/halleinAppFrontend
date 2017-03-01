@@ -26,17 +26,19 @@
     <div class="block">
         <h2>Benachrichtigungen:</h2>
         <label class="switch transparent">
-            <input type="checkbox" ng-model="input.newsletter.email">
+            <input type="checkbox" ng-model="input.newsletter.active">
             <div class="slider round"></div>
         </label>
-        <span class="switchLabel">Newsletter aus</span>
+        <span class="switchLabel" ng-if="input.newsletter.active">Newsletter ein</span>
+        <span class="switchLabel" ng-if="!input.newsletter.active">Newsletter aus</span>
         <br/>
         <label class="switch transparent">
-            <input type="checkbox" ng-model="input.notifications">
+            <input type="checkbox" ng-model="input.general.notifications">
             <div class="slider round"></div>
         </label>
-        <span class="switchLabel">Push-Benachrichtigungen ein</span>
+        <span class="switchLabel" ng-if="input.general.notifications">Push-Benachrichtigungen ein</span>
+        <span class="switchLabel" ng-if="!input.general.notifications">Push-Benachrichtigungen aus</span>
     </div>
 
-    <i class="material-icons doneicon" ng-click="save()">done</i>
+    <i class="material-icons doneicon" ng-click="save(); exitSettings()">done</i>
 </div>

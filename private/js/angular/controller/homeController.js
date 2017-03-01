@@ -25,13 +25,17 @@ myApp.controller('homeController', function ($scope) {
             case 0:
                 swiperStartHorizontal.lockSwipeToPrev();
                 swiperStartHorizontal.lockSwipeToNext();
+                swiperFoodVertical.lockSwipeToPrev();
                 break;
             case 2:
                 swiperStartHorizontal.lockSwipeToPrev();
                 swiperStartHorizontal.lockSwipeToNext();
+                swiperFoodVertical.lockSwipeToNext();
                 break;
             default:
                 swiperStartHorizontal.unlockSwipeToPrev();
+                swiperFoodVertical.unlockSwipeToPrev();
+                swiperFoodVertical.unlockSwipeToNext();
         }
     });
     swiperStartVertical.on('slideChangeStart', function () {
@@ -48,4 +52,7 @@ myApp.controller('homeController', function ($scope) {
                 swiperStartVertical.unlockSwipeToNext();
         }
     });
+    $scope.exitSettings = function() {
+        swiperStartVertical.slideTo(0);
+    }
 });

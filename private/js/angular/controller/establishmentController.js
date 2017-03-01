@@ -8,6 +8,7 @@ myApp.controller('establishmentController', function ($scope, $cordovaPreference
 
     $scope.save = function () {
             $scope.input.sex = $scope.sexes.active;
+        $scope.input.notifications = true;
             $cordovaPreferences.store('general', $scope.input);
     }
 });

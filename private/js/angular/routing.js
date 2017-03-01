@@ -7,6 +7,16 @@ myApp.config(function ($routeProvider) {
         .when('/', {
             templateUrl: 'content/welcome.html',
             controller: 'welcomeController',
+            resolve: {
+                'authenticate': function ($location, $cordovaPreferences) {
+                    document.addEventListener("deviceready", function () {
+                        $cordovaPreferences.fetch('setupDone')
+                            .success(function (value) {
+                                if(value == true) $location.path('/home');
+                            });
+                    }, false);
+                }
+            }
         })
         .when('/interests', {
             templateUrl: 'content/interests.html',
