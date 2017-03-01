@@ -1,17 +1,22 @@
-myApp.controller('homeController', function ($scope) {
-    var swiperStartHorizontal = new Swiper ('.swiper-container-start-horizontal', {
+myApp.controller('homeController', function ($scope, $http) {
+    $http.get('http://api.openweathermap.org/data/2.5/weather?q=Hallein&appid=643bed1f37977f3f065cd32dfcc6bd5f')
+        .then(function (response) {
+            $scope.weather = response.data.weather[0].description;
+        })
+
+    var swiperStartHorizontal = new Swiper('.swiper-container-start-horizontal', {
         direction: 'horizontal',
     })
-    var swiperStartVertical = new Swiper ('.swiper-container-start-vertical', {
+    var swiperStartVertical = new Swiper('.swiper-container-start-vertical', {
         direction: 'vertical'
     })
-    var swiperFoodVertical = new Swiper ('.swiper-container-food-vertical', {
+    var swiperFoodVertical = new Swiper('.swiper-container-food-vertical', {
         direction: 'vertical',
         initialSlide: 1
     })
     swiperStartHorizontal.on('slideChangeStart', function () {
         var currentSlide = swiperStartHorizontal.realIndex;
-        switch(currentSlide) {
+        switch (currentSlide) {
             case 1:
                 swiperStartHorizontal.lockSwipeToNext();
                 break;
@@ -21,7 +26,7 @@ myApp.controller('homeController', function ($scope) {
     });
     swiperFoodVertical.on('slideChangeStart', function () {
         var currentSlide = swiperFoodVertical.realIndex;
-        switch(currentSlide) {
+        switch (currentSlide) {
             case 0:
                 swiperStartHorizontal.lockSwipeToPrev();
                 swiperStartHorizontal.lockSwipeToNext();
@@ -40,7 +45,7 @@ myApp.controller('homeController', function ($scope) {
     });
     swiperStartVertical.on('slideChangeStart', function () {
         var currentSlide = swiperStartVertical.realIndex;
-        switch(currentSlide) {
+        switch (currentSlide) {
             case 1:
                 swiperStartHorizontal.lockSwipeToPrev();
                 swiperStartHorizontal.lockSwipeToNext();
@@ -52,7 +57,7 @@ myApp.controller('homeController', function ($scope) {
                 swiperStartVertical.unlockSwipeToNext();
         }
     });
-    $scope.exitSettings = function() {
+    $scope.exitSettings = function () {
         swiperStartVertical.slideTo(0);
     }
 });

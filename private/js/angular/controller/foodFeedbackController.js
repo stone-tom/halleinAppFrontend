@@ -30,8 +30,5 @@ myApp.controller('foodFeedbackController', function ($scope, $http) {
         .then(function (response) {
             $scope.bubbles = response.data;
         })
-
     }
-
-
 });
