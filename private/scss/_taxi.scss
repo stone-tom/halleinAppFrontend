@@ -7,7 +7,10 @@
   font-size: 0;
   padding-top: 30px;
   h1 {
+    font-size: 45px;
     color: #fff;
+    padding-top: 20px;
+    text-transform: uppercase;
     text-align: center;
   }
   .taxis {
@@ -28,10 +31,23 @@
       border-radius: 20px;
       text-decoration: none;
       transition: transform .2s ease;
+      .phone{
+        display: none;
+      }
+      &.phone{
+        .name{
+          display: none;
+        }
+        .phone{
+          display: inline-block;
+        }
+      }
+      /*
       &:active{
         background: rgba(0,0,0,.3);
         transform: scale(.7);
       }
+      */
     }
   }
 }

@@ -1,12 +1,12 @@
 myApp.controller('taxiController', function ($scope) {
     $scope.taxis = [
-        {name: 'Taxi Resul', phone: '71111'},
-        {name: 'City Taxi', phone: '82030'},
-        {name: "DES IS'A TAXI", phone: '70400'},
-        {name: "Taxi Steiner", phone: '70400'},
-        {name: "Taxi Comfortline", phone: '70400'},
-        {name: "Abdinghoff Taxi", phone: '70400'},
-        {name: "Alfred Aschauer", phone: '70400'}
+        {name: 'City Taxi', phone: '+43 6245 82030'},
+        {name: "Taxi Comfortline", phone: '+43 6245 70370'},
+        {name: "Abdinghoff Taxi", phone: '+43 6245 84400'},
+        {name: "DES IS'A TAXI", phone: '+43 6245 70400'},
+        {name: 'Taxi Resul', phone: '+43 6245 71111'},
+        {name: "Taxi Steiner", phone: '+43 6245 70775'},
+        {name: "Alfred Aschauer", phone: '+43 6245 85195'}
     ]
 
     $scope.random = function(array) {

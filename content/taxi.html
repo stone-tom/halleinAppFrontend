@@ -1,8 +1,9 @@
 <div class="taxiWrapper" ng-controller="taxiController">
     <h1>Taxi rufen</h1>
     <div class="taxis">
-        <a href="tel:{{taxi.phone}}" class="taxi" ng-repeat="taxi in random(taxis)">
-            <div>{{taxi.name}}</div>
+        <a href="tel:{{taxi.phone}}" class="taxi" ng-class="{phone: taxi.showPhone}" mn-touch hold="taxi.showPhone = !taxi.showPhone" ng-repeat="taxi in taxis">
+            <span class="name">{{taxi.name}}</span>
+            <span class="phone">{{taxi.phone}}</span>
         </a>
     </div>
 </div>
