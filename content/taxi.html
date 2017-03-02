@@ -1,0 +1,8 @@
+<div class="taxiWrapper" ng-controller="taxiController">
+    <h1>Taxi rufen</h1>
+    <div class="taxis">
+        <a href="tel:{{taxi.phone}}" class="taxi" ng-repeat="taxi in random(taxis)">
+            <div>{{taxi.name}}</div>
+        </a>
+    </div>
+</div>

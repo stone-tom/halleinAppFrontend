@@ -107,7 +107,7 @@ myApp.controller('restaurantDetailController', function ($scope, $routeParams, $
         tabs: [
             {icon: 'info_outline', link: '#general'},
             {icon: 'restaurant', link: '#menus'},
-            {icon: 'map', link: '#location'},
+            {icon: 'room', link: '#location'},
             {icon: 'star_border', link: '#feedback'},
         ]
     };

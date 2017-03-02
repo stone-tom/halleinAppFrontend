@@ -6,6 +6,7 @@ myApp.controller('homeController', function ($scope, $http) {
 
     var swiperStartHorizontal = new Swiper('.swiper-container-start-horizontal', {
         direction: 'horizontal',
+        initialSlide: 1
     })
     var swiperStartVertical = new Swiper('.swiper-container-start-vertical', {
         direction: 'vertical'
@@ -17,10 +18,14 @@ myApp.controller('homeController', function ($scope, $http) {
     swiperStartHorizontal.on('slideChangeStart', function () {
         var currentSlide = swiperStartHorizontal.realIndex;
         switch (currentSlide) {
-            case 1:
+            case 0:
+                swiperStartHorizontal.lockSwipeToPrev();
+                break;
+            case 2:
                 swiperStartHorizontal.lockSwipeToNext();
                 break;
             default:
+                swiperStartHorizontal.unlockSwipeToPrev();
                 swiperStartHorizontal.unlockSwipeToNext();
         }
     });
