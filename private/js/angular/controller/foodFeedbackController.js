@@ -1,6 +1,10 @@
 myApp.controller('foodFeedbackController', function ($scope, $http) {
+    var firstScroll = true;
     $('.bubbles').on('touchstart', function(e){
-        e.stopPropagation();
+        if(firstScroll || $('.bubbles').scrollTop() > 0) {
+            e.stopPropagation();
+            firstScroll = false;
+        }
     });
 
     getFeedback('-created');

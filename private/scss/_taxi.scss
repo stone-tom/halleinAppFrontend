@@ -34,8 +34,15 @@
       .phone{
         display: none;
         transform: rotateX(180deg);
+        i{
+          font-size: 18px;
+          vertical-align: middle;
+        }
+        span{
+          vertical-align: middle;
+        }
       }
-      &.phone{
+      &.showPhone{
         transition: transform .4s ease;
         transform: rotateX(180deg);
         .name{
@@ -45,12 +52,9 @@
           display: inline-block;
         }
       }
-      /*
       &:active{
         background: rgba(0,0,0,.3);
-        transform: scale(.7);
       }
-      */
     }
   }
 }
