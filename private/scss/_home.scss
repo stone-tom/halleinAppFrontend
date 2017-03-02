@@ -1,29 +1,55 @@
+.globalNotification {
+  position: fixed;
+  width: 100%;
+  top: -100px;
+  background-color: rgba(46, 204, 113, 0.82);
+  color: #fff;
+  padding: 3px 10px;
+  transition: top .3s ease;
+  text-align: center;
+  i{
+    font-size: 18px;
+    margin-left: -60px;
+    vertical-align: middle;
+  }
+  span{
+    font-size: 14px;
+    vertical-align: middle;
+  }
+  &.active{
+    top: 0;
+  }
+}
+
 .swiper-container-horizontal {
   height: 100%;
   background-image: url('../../assets/imgs/start_background.jpg');
   background-size: cover;
   overflow: hidden;
-  .background{
+  .background {
     position: absolute;
     width: 100%;
   }
-  .page{
+  .page {
     height: 100%;
   }
 }
+
 .swiper-container-vertical {
   height: 100%;
-  .page{
+  .page {
     height: 100%;
   }
 }
-.arrowTop, .arrowRight, .arrowBottom, .arrowLeft{
+
+.arrowTop, .arrowRight, .arrowBottom, .arrowLeft {
   //animation: fadeOut 8s 2s infinite;
 }
+
 .arrowTop {
   width: 100%;
   text-align: center;
-  i{
+  i {
     font-size: 20px;
     color: #fff;
   }
@@ -36,15 +62,16 @@
     color: #fff;
   }
 }
-.arrowRight{
+
+.arrowRight {
   position: absolute;
   top: 45%;
   right: 0;
-  i{
+  i {
     font-size: 20px;
     color: #fff;
   }
-  .description{
+  .description {
     display: inline-block;
     vertical-align: middle;
     text-align: center;
@@ -53,12 +80,13 @@
     color: #fff;
   }
 }
+
 .arrowBottom {
   position: absolute;
   width: 100%;
   bottom: 0;
   text-align: center;
-  i{
+  i {
     font-size: 20px;
     color: #fff;
   }
@@ -71,14 +99,15 @@
     color: #fff;
   }
 }
-.arrowLeft{
+
+.arrowLeft {
   position: absolute;
   top: 45%;
-  i{
+  i {
     font-size: 20px;
     color: #fff;
   }
-  .description{
+  .description {
     display: inline-block;
     vertical-align: middle;
     text-align: center;
@@ -87,27 +116,28 @@
     color: #fff;
   }
 }
-.description{
+
+.description {
   border-radius: 20px;
-  &.yellow{
+  &.yellow {
     background-color: rgba(39, 0, 134, 0.5);
   }
-  &.grey{
+  &.grey {
     background-color: rgba(101, 94, 94, 0.7);
   }
-  &.red{
+  &.red {
     background-color: rgba(238, 131, 96, 0.7);
   }
-  &.white{
+  &.white {
     background-color: rgba(255, 255, 255, .3);
   }
 }
 
 @keyframes fadeOut {
-  0%, 100%{
+  0%, 100% {
     opacity: 1;
   }
-  50%{
+  50% {
     opacity: 0;
   }
 }

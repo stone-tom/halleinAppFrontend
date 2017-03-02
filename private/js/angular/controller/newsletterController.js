@@ -25,12 +25,19 @@ myApp.controller('newsletterController', function ($scope, $cordovaPreferences) 
             null);
     }
 
-    $scope.save = function () {
+    $scope.subscribe = function () {
         var newsletter = {
             active: true,
             email: $scope.input.email
         }
-        $cordovaPreferences.store('newsletter', newsletter);
-        $cordovaPreferences.store('setupDone', true);
+        $cordovaPreferences.store('newsletter', newsletter).then(function(){
+            $cordovaPreferences.store('setupDone', true).then(function(){
+                slide('#/home');
+            })
+        });
+    }
+
+    $scope.cancel = function(){
+        slide('#/home');
     }
 });

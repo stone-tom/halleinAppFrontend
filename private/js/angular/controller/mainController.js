@@ -9,8 +9,8 @@ myApp.controller('mainController', function ($scope, $cordovaPreferences) {
                 if (value.notifications) {
                     cordova.plugins.notification.local.schedule({
                         id: 1,
-                        title: "Menü eingetragen",
-                        text: "Roadhouse hat ein Menü eingetragen",
+                        title: "Dein Lieblingsgericht",
+                        text: "Heute gibt es Burger im Roadhouse. Lass es dir schmecken!",
                         icon: 'file://icon',
                         smallIcon: 'file://notification'
                     });

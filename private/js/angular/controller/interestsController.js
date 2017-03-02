@@ -10,6 +10,8 @@ myApp.controller('interestsController', function ($scope, $cordovaPreferences) {
     ]
 
     $scope.save = function () {
-        $cordovaPreferences.store('interests', $scope.interests);
+        $cordovaPreferences.store('interests', $scope.interests).then(function () {
+            slide('#/newsletter');
+        });
     }
 });

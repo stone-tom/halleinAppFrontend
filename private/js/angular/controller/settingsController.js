@@ -1,4 +1,4 @@
-myApp.controller('settingsController', function ($scope, $cordovaPreferences) {
+myApp.controller('settingsController', function ($scope, $rootScope, $cordovaPreferences, $timeout) {
     $scope.input = {};
 
     document.addEventListener("deviceready", function () {
@@ -20,5 +20,11 @@ myApp.controller('settingsController', function ($scope, $cordovaPreferences) {
         $cordovaPreferences.store('general', $scope.input.general);
         $cordovaPreferences.store('interests', $scope.input.interests);
         $cordovaPreferences.store('newsletter', $scope.input.newsletter);
+        $rootScope.globalNotification = {
+            text: 'Gespeichert!'
+        }
+        $timeout(function(){
+            delete $rootScope.globalNotification;
+        }, 3000);
     }
 });

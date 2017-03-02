@@ -7,8 +7,12 @@ myApp.controller('establishmentController', function ($scope, $cordovaPreference
     $scope.input = {};
 
     $scope.save = function () {
+        if (Number.isInteger($scope.sexes.active) && $scope.input.birthday) {
             $scope.input.sex = $scope.sexes.active;
-        $scope.input.notifications = true;
-            $cordovaPreferences.store('general', $scope.input);
+            $scope.input.notifications = true;
+            $cordovaPreferences.store('general', $scope.input).then(function () {
+                slide('#/interests');
+            });
+        }
     }
 });

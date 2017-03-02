@@ -75,7 +75,6 @@ myApp.controller('restaurantDetailController', function ($scope, $routeParams, $
     $scope.slider = {
         current: 0,
         images: [
-            {path: 'assets/imgs/food_background.jpg'},
             {path: 'assets/imgs/local1.jpg'},
             {path: 'assets/imgs/local2.jpg'},
             {path: 'assets/imgs/local3.jpg'}
@@ -152,7 +151,7 @@ myApp.controller('restaurantDetailController', function ($scope, $routeParams, $
         }
         else if (openingTimes.times.opens < now && openingTimes.times.closesHalf > now || openingTimes.times.opensHalf < now && openingTimes.times.closes > now) {
             $scope.openingTimes.status = 'opened';
-            $scope.openingTimes.text = 'Gerade geöffnet';
+            $scope.openingTimes.text = 'Jetzt geöffnet';
         }
         else {
             $scope.openingTimes.status = 'closed';
