@@ -33,8 +33,11 @@
       transition: transform .2s ease;
       .phone{
         display: none;
+        transform: rotateX(180deg);
       }
       &.phone{
+        transition: transform .4s ease;
+        transform: rotateX(180deg);
         .name{
           display: none;
         }
